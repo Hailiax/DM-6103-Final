@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<ClCompile Include="src\ofApp.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\main.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\ofSecond.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
+		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_sse2.cpp">
+			<Filter>src\FastNoiseSIMD</Filter>
+		</ClCompile>
+		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_sse41.cpp">
+			<Filter>src\FastNoiseSIMD</Filter>
+		</ClCompile>
+		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_avx512.cpp">
+			<Filter>src\FastNoiseSIMD</Filter>
+		</ClCompile>
+		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_internal.cpp">
+			<Filter>src\FastNoiseSIMD</Filter>
+		</ClCompile>
+		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_avx2.cpp">
+			<Filter>src\FastNoiseSIMD</Filter>
+		</ClCompile>
+		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_neon.cpp">
+			<Filter>src\FastNoiseSIMD</Filter>
+		</ClCompile>
+		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD.cpp">
+			<Filter>src\FastNoiseSIMD</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIOData.cpp">
+			<Filter>addons\ofxSocketIO\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIO.cpp">
+			<Filter>addons\ofxSocketIO\src</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<Filter Include="src">
+			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="src\FastNoiseSIMD">
+			<UniqueIdentifier>{05149094-FA89-4E05-6FFB-5E0D}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons">
+			<UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSocketIO">
+			<UniqueIdentifier>{B1A30043-3425-1F72-BFAE-52AE}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSocketIO\src">
+			<UniqueIdentifier>{D398A40F-C204-3F89-85D3-F8C7}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSocketIO\libs">
+			<UniqueIdentifier>{B8A43D38-BEA3-8DCE-045C-532E}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSocketIO\libs\socket.io-client">
+			<UniqueIdentifier>{AE4C18CF-4D82-5969-2417-9EAC}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSocketIO\libs\socket.io-client\include">
+			<UniqueIdentifier>{C35A7690-F8FB-803F-C6F3-C786}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\FastNoiseSIMD\FastNoiseSIMD.h">
+			<Filter>src\FastNoiseSIMD</Filter>
+		</ClInclude>
+		<ClInclude Include="src\FastNoiseSIMD\FastNoiseSIMD_internal.h">
+			<Filter>src\FastNoiseSIMD</Filter>
+		</ClInclude>
+		<ClInclude Include="src\ofSecond.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIOData.h">
+			<Filter>addons\ofxSocketIO\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIO.h">
+			<Filter>addons\ofxSocketIO\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include\sio_socket.h">
+			<Filter>addons\ofxSocketIO\libs\socket.io-client\include</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include\sio_message.h">
+			<Filter>addons\ofxSocketIO\libs\socket.io-client\include</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include\sio_client.h">
+			<Filter>addons\ofxSocketIO\libs\socket.io-client\include</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc" />
+	</ItemGroup>
+</Project>
