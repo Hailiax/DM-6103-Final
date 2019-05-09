@@ -54,19 +54,19 @@
 	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
 	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
 		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-		<Import Project="../../../../../Dev/OpenFrameworks/libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
 	</ImportGroup>
 	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
 		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-		<Import Project="../../../../../Dev/OpenFrameworks/libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
 	</ImportGroup>
 	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
 		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-		<Import Project="../../../../../Dev/OpenFrameworks/libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
 	</ImportGroup>
 	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
 		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-		<Import Project="../../../../../Dev/OpenFrameworks/libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
 	</ImportGroup>
 	<PropertyGroup Label="UserMacros" />
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -100,7 +100,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
 		</ClCompile>
@@ -120,7 +120,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
@@ -140,7 +140,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
@@ -163,7 +163,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
 		</ClCompile>
@@ -190,19 +190,19 @@
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_avx2.cpp" />
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_neon.cpp" />
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD.cpp" />
-		<ClCompile Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIOData.cpp" />
-		<ClCompile Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIO.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIOData.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIO.cpp" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
 		<ClInclude Include="src\FastNoiseSIMD\FastNoiseSIMD.h" />
 		<ClInclude Include="src\FastNoiseSIMD\FastNoiseSIMD_internal.h" />
 		<ClInclude Include="src\ofSecond.h" />
-		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIOData.h" />
-		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIO.h" />
-		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include\sio_socket.h" />
-		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include\sio_message.h" />
-		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include\sio_client.h" />
+		<ClInclude Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIOData.h" />
+		<ClInclude Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIO.h" />
+		<ClInclude Include="..\..\..\addons\ofxSocketIO\libs\socket.io-client\include\sio_socket.h" />
+		<ClInclude Include="..\..\..\addons\ofxSocketIO\libs\socket.io-client\include\sio_message.h" />
+		<ClInclude Include="..\..\..\addons\ofxSocketIO\libs\socket.io-client\include\sio_client.h" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

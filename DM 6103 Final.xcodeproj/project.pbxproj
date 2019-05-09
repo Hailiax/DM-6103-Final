@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08364DFD3A7CBC6885885276 /* ofxSocketIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A96C398AD37CAFA23F824F3 /* ofxSocketIO.cpp */; };
 		0D6D71394D427E63C15532FC /* FastNoiseSIMD_sse2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BB62823F91CF6A98D388A1A /* FastNoiseSIMD_sse2.cpp */; settings = {COMPILER_FLAGS = "-msse2"; }; };
-		15AFFB70F73A26F0EF25B83A /* ofxSocketIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 176E097D53D1B0D55B83E50C /* ofxSocketIO.cpp */; };
 		4A246A4282B5A84D0955A652 /* FastNoiseSIMD_avx512.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B172EFFB69AA5841D7BF5BF /* FastNoiseSIMD_avx512.cpp */; settings = {COMPILER_FLAGS = "-mavx512f"; }; };
-		65943DE499064018865FE537 /* ofxSocketIOData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F59D7B0E7A54C632B055DC2 /* ofxSocketIOData.cpp */; };
 		6B4E42B39683C16B1A84BDA6 /* FastNoiseSIMD_neon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E4E8C0A53C3B78FB4644ED /* FastNoiseSIMD_neon.cpp */; };
 		83EE1E81D2EEAEB75A4D7D75 /* FastNoiseSIMD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A482914E76F9E4EDF36F9D0D /* FastNoiseSIMD.cpp */; };
 		8592DE7354887C224894CBAA /* FastNoiseSIMD_internal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D06DDC438D5ABCD4656D245 /* FastNoiseSIMD_internal.cpp */; };
 		941A5CC5740D02B7DCF6946A /* FastNoiseSIMD_sse41.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AEB6F78A1665EBAA8E2E95D /* FastNoiseSIMD_sse41.cpp */; settings = {COMPILER_FLAGS = "-msse4.1"; }; };
 		B747B49FB38380786FB15B5F /* ofSecond.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1A94BCA8820B7307A8BF5B2 /* ofSecond.cpp */; };
+		E30CC3BB5A2CC97C82A79C87 /* ofxSocketIOData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88E410C91B288244EB10D96C /* ofxSocketIOData.cpp */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
 		F8C88094A2BDB5FA6DA3B093 /* FastNoiseSIMD_avx2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C3FE7CE6A9F9284AF75AFEC /* FastNoiseSIMD_avx2.cpp */; settings = {COMPILER_FLAGS = "-mavx2"; }; };
@@ -35,205 +35,205 @@
 
 /* Begin PBXFileReference section */
 		05E4E8C0A53C3B78FB4644ED /* FastNoiseSIMD_neon.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FastNoiseSIMD_neon.cpp; path = src/FastNoiseSIMD/FastNoiseSIMD_neon.cpp; sourceTree = SOURCE_ROOT; };
+		0A96C398AD37CAFA23F824F3 /* ofxSocketIO.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSocketIO.cpp; path = ../../../addons/ofxSocketIO/src/ofxSocketIO.cpp; sourceTree = SOURCE_ROOT; };
 		0AEB6F78A1665EBAA8E2E95D /* FastNoiseSIMD_sse41.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FastNoiseSIMD_sse41.cpp; path = src/FastNoiseSIMD/FastNoiseSIMD_sse41.cpp; sourceTree = SOURCE_ROOT; };
 		0D756127C7DAFA727BDC56C3 /* ofSecond.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofSecond.h; path = src/ofSecond.h; sourceTree = SOURCE_ROOT; };
-		176E097D53D1B0D55B83E50C /* ofxSocketIO.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSocketIO.cpp; path = ../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/src/ofxSocketIO.cpp; sourceTree = SOURCE_ROOT; };
 		1B172EFFB69AA5841D7BF5BF /* FastNoiseSIMD_avx512.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FastNoiseSIMD_avx512.cpp; path = src/FastNoiseSIMD/FastNoiseSIMD_avx512.cpp; sourceTree = SOURCE_ROOT; };
 		2BB62823F91CF6A98D388A1A /* FastNoiseSIMD_sse2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FastNoiseSIMD_sse2.cpp; path = src/FastNoiseSIMD/FastNoiseSIMD_sse2.cpp; sourceTree = SOURCE_ROOT; };
-		2F59D7B0E7A54C632B055DC2 /* ofxSocketIOData.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSocketIOData.cpp; path = ../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/src/ofxSocketIOData.cpp; sourceTree = SOURCE_ROOT; };
+		377CC4A6E20C685706D363AA /* sio_message.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sio_message.h; path = "../../../addons/ofxSocketIO/libs/socket.io-client/include/sio_message.h"; sourceTree = SOURCE_ROOT; };
 		3D06DDC438D5ABCD4656D245 /* FastNoiseSIMD_internal.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FastNoiseSIMD_internal.cpp; path = src/FastNoiseSIMD/FastNoiseSIMD_internal.cpp; sourceTree = SOURCE_ROOT; };
 		41949929D4DB4AF248F13AE7 /* FastNoiseSIMD_internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = FastNoiseSIMD_internal.h; path = src/FastNoiseSIMD/FastNoiseSIMD_internal.h; sourceTree = SOURCE_ROOT; };
 		7C3FE7CE6A9F9284AF75AFEC /* FastNoiseSIMD_avx2.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FastNoiseSIMD_avx2.cpp; path = src/FastNoiseSIMD/FastNoiseSIMD_avx2.cpp; sourceTree = SOURCE_ROOT; };
+		88E410C91B288244EB10D96C /* ofxSocketIOData.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofxSocketIOData.cpp; path = ../../../addons/ofxSocketIO/src/ofxSocketIOData.cpp; sourceTree = SOURCE_ROOT; };
 		97D022DC824E92030677943D /* FastNoiseSIMD.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = FastNoiseSIMD.h; path = src/FastNoiseSIMD/FastNoiseSIMD.h; sourceTree = SOURCE_ROOT; };
+		9D3D8BF6F1454309C9E6A63D /* ofxSocketIO.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSocketIO.h; path = ../../../addons/ofxSocketIO/src/ofxSocketIO.h; sourceTree = SOURCE_ROOT; };
 		A1A94BCA8820B7307A8BF5B2 /* ofSecond.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofSecond.cpp; path = src/ofSecond.cpp; sourceTree = SOURCE_ROOT; };
 		A482914E76F9E4EDF36F9D0D /* FastNoiseSIMD.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FastNoiseSIMD.cpp; path = src/FastNoiseSIMD/FastNoiseSIMD.cpp; sourceTree = SOURCE_ROOT; };
-		B3DF4F6F9A60C19FFA358DC7 /* ofxSocketIOData.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSocketIOData.h; path = ../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/src/ofxSocketIOData.h; sourceTree = SOURCE_ROOT; };
-		C76107CF4B231F5F6BA79F73 /* ofxSocketIO.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSocketIO.h; path = ../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/src/ofxSocketIO.h; sourceTree = SOURCE_ROOT; };
-		D9EB2323451F5E34786333B8 /* sio_client.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sio_client.h; path = "../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/include/sio_client.h"; sourceTree = SOURCE_ROOT; };
-		E42962AC2163EDD300A6A9E2 /* ofCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofCamera.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/ofCamera.cpp; sourceTree = SOURCE_ROOT; };
-		E42962AD2163EDD300A6A9E2 /* ofMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMesh.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/ofMesh.h; sourceTree = SOURCE_ROOT; };
-		E42962AE2163EDD300A6A9E2 /* ofNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofNode.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/ofNode.h; sourceTree = SOURCE_ROOT; };
-		E42962AF2163EDD300A6A9E2 /* ofNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofNode.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/ofNode.cpp; sourceTree = SOURCE_ROOT; };
-		E42962B02163EDD300A6A9E2 /* of3dPrimitives.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = of3dPrimitives.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/of3dPrimitives.cpp; sourceTree = SOURCE_ROOT; };
-		E42962B12163EDD300A6A9E2 /* of3dUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = of3dUtils.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/of3dUtils.h; sourceTree = SOURCE_ROOT; };
-		E42962B22163EDD300A6A9E2 /* ofEasyCam.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofEasyCam.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/ofEasyCam.cpp; sourceTree = SOURCE_ROOT; };
-		E42962B32163EDD300A6A9E2 /* ofCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofCamera.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/ofCamera.h; sourceTree = SOURCE_ROOT; };
-		E42962B42163EDD300A6A9E2 /* ofMesh.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = ofMesh.inl; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/ofMesh.inl; sourceTree = SOURCE_ROOT; };
-		E42962B52163EDD300A6A9E2 /* of3dUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = of3dUtils.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/of3dUtils.cpp; sourceTree = SOURCE_ROOT; };
-		E42962B62163EDD300A6A9E2 /* of3dPrimitives.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = of3dPrimitives.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/of3dPrimitives.h; sourceTree = SOURCE_ROOT; };
-		E42962B72163EDD300A6A9E2 /* ofEasyCam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofEasyCam.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d/ofEasyCam.h; sourceTree = SOURCE_ROOT; };
-		E42962BA2163EDD300A6A9E2 /* ofAVFoundationGrabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAVFoundationGrabber.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofAVFoundationGrabber.h; sourceTree = SOURCE_ROOT; };
-		E42962BB2163EDD300A6A9E2 /* ofVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVideoPlayer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofVideoPlayer.h; sourceTree = SOURCE_ROOT; };
-		E42962BC2163EDD300A6A9E2 /* ofAVFoundationPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAVFoundationPlayer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofAVFoundationPlayer.h; sourceTree = SOURCE_ROOT; };
-		E42962BD2163EDD300A6A9E2 /* ofQtUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofQtUtils.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQtUtils.cpp; sourceTree = SOURCE_ROOT; };
-		E42962BE2163EDD300A6A9E2 /* ofQTKitGrabber.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ofQTKitGrabber.mm; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQTKitGrabber.mm; sourceTree = SOURCE_ROOT; };
-		E42962BF2163EDD300A6A9E2 /* ofQuickTimeGrabber.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofQuickTimeGrabber.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQuickTimeGrabber.cpp; sourceTree = SOURCE_ROOT; };
-		E42962C12163EDD300A6A9E2 /* ofAVFoundationVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAVFoundationVideoPlayer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofAVFoundationVideoPlayer.h; sourceTree = SOURCE_ROOT; };
-		E42962C22163EDD300A6A9E2 /* ofAVFoundationGrabber.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ofAVFoundationGrabber.mm; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofAVFoundationGrabber.mm; sourceTree = SOURCE_ROOT; };
-		E42962C32163EDD300A6A9E2 /* ofQTKitMovieRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQTKitMovieRenderer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQTKitMovieRenderer.h; sourceTree = SOURCE_ROOT; };
-		E42962C42163EDD300A6A9E2 /* ofVideoPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVideoPlayer.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofVideoPlayer.cpp; sourceTree = SOURCE_ROOT; };
-		E42962C52163EDD300A6A9E2 /* ofQTKitGrabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQTKitGrabber.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQTKitGrabber.h; sourceTree = SOURCE_ROOT; };
-		E42962C72163EDD300A6A9E2 /* ofQuickTimeGrabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQuickTimeGrabber.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQuickTimeGrabber.h; sourceTree = SOURCE_ROOT; };
-		E42962C92163EDD300A6A9E2 /* ofQuickTimePlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofQuickTimePlayer.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQuickTimePlayer.cpp; sourceTree = SOURCE_ROOT; };
-		E42962CA2163EDD300A6A9E2 /* ofVideoGrabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVideoGrabber.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofVideoGrabber.h; sourceTree = SOURCE_ROOT; };
-		E42962CB2163EDD300A6A9E2 /* ofQTKitPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQTKitPlayer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQTKitPlayer.h; sourceTree = SOURCE_ROOT; };
-		E42962CD2163EDD300A6A9E2 /* ofQtUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQtUtils.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQtUtils.h; sourceTree = SOURCE_ROOT; };
-		E42962CE2163EDD300A6A9E2 /* ofAVFoundationPlayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ofAVFoundationPlayer.mm; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofAVFoundationPlayer.mm; sourceTree = SOURCE_ROOT; };
-		E42962CF2163EDD300A6A9E2 /* ofQuickTimePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQuickTimePlayer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQuickTimePlayer.h; sourceTree = SOURCE_ROOT; };
-		E42962D02163EDD300A6A9E2 /* ofVideoGrabber.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVideoGrabber.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofVideoGrabber.cpp; sourceTree = SOURCE_ROOT; };
-		E42962D52163EDD300A6A9E2 /* ofQTKitPlayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ofQTKitPlayer.mm; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQTKitPlayer.mm; sourceTree = SOURCE_ROOT; };
-		E42962D62163EDD300A6A9E2 /* ofQTKitMovieRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ofQTKitMovieRenderer.m; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofQTKitMovieRenderer.m; sourceTree = SOURCE_ROOT; };
-		E42962D72163EDD300A6A9E2 /* ofAVFoundationVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ofAVFoundationVideoPlayer.m; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofAVFoundationVideoPlayer.m; sourceTree = SOURCE_ROOT; };
-		E42962D92163EDD300A6A9E2 /* ofVideoBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVideoBaseTypes.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video/ofVideoBaseTypes.h; sourceTree = SOURCE_ROOT; };
-		E42962DB2163EDD300A6A9E2 /* ofParameterGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofParameterGroup.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofParameterGroup.h; sourceTree = SOURCE_ROOT; };
-		E42962DC2163EDD300A6A9E2 /* ofColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofColor.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofColor.h; sourceTree = SOURCE_ROOT; };
-		E42962DD2163EDD300A6A9E2 /* ofRectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofRectangle.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofRectangle.cpp; sourceTree = SOURCE_ROOT; };
-		E42962DE2163EDD300A6A9E2 /* ofPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofPoint.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofPoint.h; sourceTree = SOURCE_ROOT; };
-		E42962DF2163EDD300A6A9E2 /* ofTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofTypes.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofTypes.h; sourceTree = SOURCE_ROOT; };
-		E42962E02163EDD300A6A9E2 /* ofRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofRectangle.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofRectangle.h; sourceTree = SOURCE_ROOT; };
-		E42962E12163EDD300A6A9E2 /* ofBaseTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofBaseTypes.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofBaseTypes.cpp; sourceTree = SOURCE_ROOT; };
-		E42962E22163EDD300A6A9E2 /* ofParameterGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofParameterGroup.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofParameterGroup.cpp; sourceTree = SOURCE_ROOT; };
-		E42962E32163EDD300A6A9E2 /* ofParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofParameter.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofParameter.h; sourceTree = SOURCE_ROOT; };
-		E42962E42163EDD300A6A9E2 /* ofColor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofColor.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofColor.cpp; sourceTree = SOURCE_ROOT; };
-		E42962E52163EDD300A6A9E2 /* ofParameter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofParameter.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofParameter.cpp; sourceTree = SOURCE_ROOT; };
-		E42962E62163EDD300A6A9E2 /* ofBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofBaseTypes.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types/ofBaseTypes.h; sourceTree = SOURCE_ROOT; };
-		E42962E82163EDD300A6A9E2 /* ofMainLoop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMainLoop.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofMainLoop.h; sourceTree = SOURCE_ROOT; };
-		E42962E92163EDD300A6A9E2 /* ofBaseApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofBaseApp.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofBaseApp.cpp; sourceTree = SOURCE_ROOT; };
-		E42962EA2163EDD300A6A9E2 /* ofAppGlutWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofAppGlutWindow.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppGlutWindow.cpp; sourceTree = SOURCE_ROOT; };
-		E42962EB2163EDD300A6A9E2 /* ofWindowSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofWindowSettings.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofWindowSettings.h; sourceTree = SOURCE_ROOT; };
-		E42962EC2163EDD300A6A9E2 /* ofAppEGLWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofAppEGLWindow.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppEGLWindow.cpp; sourceTree = SOURCE_ROOT; };
-		E42962ED2163EDD300A6A9E2 /* ofAppBaseWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppBaseWindow.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppBaseWindow.h; sourceTree = SOURCE_ROOT; };
-		E42962EE2163EDD300A6A9E2 /* ofIcon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofIcon.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofIcon.h; sourceTree = SOURCE_ROOT; };
-		E42962EF2163EDD300A6A9E2 /* ofAppNoWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppNoWindow.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppNoWindow.h; sourceTree = SOURCE_ROOT; };
-		E42962F02163EDD300A6A9E2 /* ofBaseApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofBaseApp.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofBaseApp.h; sourceTree = SOURCE_ROOT; };
-		E42962F12163EDD300A6A9E2 /* ofAppEGLWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppEGLWindow.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppEGLWindow.h; sourceTree = SOURCE_ROOT; };
-		E42962F22163EDD300A6A9E2 /* ofMainLoop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMainLoop.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofMainLoop.cpp; sourceTree = SOURCE_ROOT; };
-		E42962F32163EDD300A6A9E2 /* ofAppRunner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppRunner.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppRunner.h; sourceTree = SOURCE_ROOT; };
-		E42962F42163EDD300A6A9E2 /* ofAppNoWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofAppNoWindow.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppNoWindow.cpp; sourceTree = SOURCE_ROOT; };
-		E42962F52163EDD300A6A9E2 /* ofAppGLFWWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofAppGLFWWindow.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppGLFWWindow.cpp; sourceTree = SOURCE_ROOT; };
-		E42962F62163EDD300A6A9E2 /* ofAppGlutWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppGlutWindow.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppGlutWindow.h; sourceTree = SOURCE_ROOT; };
-		E42962F72163EDD300A6A9E2 /* ofAppRunner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofAppRunner.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppRunner.cpp; sourceTree = SOURCE_ROOT; };
-		E42962F82163EDD300A6A9E2 /* ofAppGLFWWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppGLFWWindow.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app/ofAppGLFWWindow.h; sourceTree = SOURCE_ROOT; };
-		E42962F92163EDD300A6A9E2 /* ofMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMain.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/ofMain.h; sourceTree = SOURCE_ROOT; };
-		E42962FB2163EDD300A6A9E2 /* ofThreadChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofThreadChannel.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofThreadChannel.h; sourceTree = SOURCE_ROOT; };
-		E42962FC2163EDD300A6A9E2 /* ofThread.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofThread.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofThread.cpp; sourceTree = SOURCE_ROOT; };
-		E42962FD2163EDD300A6A9E2 /* ofFpsCounter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofFpsCounter.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofFpsCounter.cpp; sourceTree = SOURCE_ROOT; };
-		E42962FE2163EDD300A6A9E2 /* ofURLFileLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofURLFileLoader.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofURLFileLoader.cpp; sourceTree = SOURCE_ROOT; };
-		E42962FF2163EDD300A6A9E2 /* ofConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofConstants.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofConstants.h; sourceTree = SOURCE_ROOT; };
-		E42963002163EDD300A6A9E2 /* ofXml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofXml.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofXml.h; sourceTree = SOURCE_ROOT; };
-		E42963012163EDD300A6A9E2 /* ofFpsCounter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofFpsCounter.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofFpsCounter.h; sourceTree = SOURCE_ROOT; };
-		E42963022163EDD300A6A9E2 /* ofLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofLog.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofLog.h; sourceTree = SOURCE_ROOT; };
-		E42963032163EDD300A6A9E2 /* ofSystemUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSystemUtils.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofSystemUtils.h; sourceTree = SOURCE_ROOT; };
-		E42963042163EDD300A6A9E2 /* ofSystemUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSystemUtils.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofSystemUtils.cpp; sourceTree = SOURCE_ROOT; };
-		E42963052163EDD300A6A9E2 /* ofUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofUtils.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofUtils.h; sourceTree = SOURCE_ROOT; };
-		E42963062163EDD300A6A9E2 /* ofNoise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofNoise.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofNoise.h; sourceTree = SOURCE_ROOT; };
-		E42963072163EDD300A6A9E2 /* ofLog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofLog.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofLog.cpp; sourceTree = SOURCE_ROOT; };
-		E42963082163EDD300A6A9E2 /* ofTimer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofTimer.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofTimer.cpp; sourceTree = SOURCE_ROOT; };
-		E42963092163EDD300A6A9E2 /* ofFileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofFileUtils.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofFileUtils.h; sourceTree = SOURCE_ROOT; };
-		E429630A2163EDD300A6A9E2 /* ofThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofThread.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofThread.h; sourceTree = SOURCE_ROOT; };
-		E429630B2163EDD300A6A9E2 /* ofURLFileLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofURLFileLoader.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofURLFileLoader.h; sourceTree = SOURCE_ROOT; };
-		E429630C2163EDD300A6A9E2 /* ofJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofJson.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofJson.h; sourceTree = SOURCE_ROOT; };
-		E429630D2163EDD300A6A9E2 /* ofFileUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofFileUtils.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofFileUtils.cpp; sourceTree = SOURCE_ROOT; };
-		E429630E2163EDD300A6A9E2 /* ofMatrixStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMatrixStack.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofMatrixStack.cpp; sourceTree = SOURCE_ROOT; };
-		E429630F2163EDD300A6A9E2 /* ofUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofUtils.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofUtils.cpp; sourceTree = SOURCE_ROOT; };
-		E42963102163EDD300A6A9E2 /* ofXml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofXml.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofXml.cpp; sourceTree = SOURCE_ROOT; };
-		E42963112163EDD300A6A9E2 /* ofMatrixStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMatrixStack.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofMatrixStack.h; sourceTree = SOURCE_ROOT; };
-		E42963122163EDD300A6A9E2 /* ofTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofTimer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils/ofTimer.h; sourceTree = SOURCE_ROOT; };
-		E42963142163EDD300A6A9E2 /* ofVec2f.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVec2f.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofVec2f.cpp; sourceTree = SOURCE_ROOT; };
-		E42963152163EDD300A6A9E2 /* ofVec4f.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVec4f.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofVec4f.cpp; sourceTree = SOURCE_ROOT; };
-		E42963162163EDD300A6A9E2 /* ofVec4f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVec4f.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofVec4f.h; sourceTree = SOURCE_ROOT; };
-		E42963172163EDD300A6A9E2 /* ofMath.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMath.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofMath.cpp; sourceTree = SOURCE_ROOT; };
-		E42963182163EDD300A6A9E2 /* ofMathConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMathConstants.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofMathConstants.h; sourceTree = SOURCE_ROOT; };
-		E42963192163EDD300A6A9E2 /* ofMatrix4x4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMatrix4x4.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofMatrix4x4.h; sourceTree = SOURCE_ROOT; };
-		E429631A2163EDD300A6A9E2 /* ofVec3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVec3f.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofVec3f.h; sourceTree = SOURCE_ROOT; };
-		E429631B2163EDD300A6A9E2 /* ofMatrix3x3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMatrix3x3.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofMatrix3x3.cpp; sourceTree = SOURCE_ROOT; };
-		E429631C2163EDD300A6A9E2 /* ofMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMath.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofMath.h; sourceTree = SOURCE_ROOT; };
-		E429631D2163EDD300A6A9E2 /* ofQuaternion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQuaternion.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofQuaternion.h; sourceTree = SOURCE_ROOT; };
-		E429631E2163EDD300A6A9E2 /* ofVectorMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVectorMath.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofVectorMath.h; sourceTree = SOURCE_ROOT; };
-		E429631F2163EDD300A6A9E2 /* ofQuaternion.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofQuaternion.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofQuaternion.cpp; sourceTree = SOURCE_ROOT; };
-		E42963202163EDD300A6A9E2 /* ofVec2f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVec2f.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofVec2f.h; sourceTree = SOURCE_ROOT; };
-		E42963212163EDD300A6A9E2 /* ofMatrix4x4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMatrix4x4.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofMatrix4x4.cpp; sourceTree = SOURCE_ROOT; };
-		E42963222163EDD300A6A9E2 /* ofMatrix3x3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMatrix3x3.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math/ofMatrix3x3.h; sourceTree = SOURCE_ROOT; };
-		E42963262163EDD300A6A9E2 /* ofVboMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVboMesh.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofVboMesh.h; sourceTree = SOURCE_ROOT; };
-		E42963272163EDD300A6A9E2 /* ofTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofTexture.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofTexture.h; sourceTree = SOURCE_ROOT; };
-		E42963282163EDD300A6A9E2 /* ofShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofShader.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofShader.h; sourceTree = SOURCE_ROOT; };
-		E42963292163EDD300A6A9E2 /* ofMaterial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMaterial.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofMaterial.cpp; sourceTree = SOURCE_ROOT; };
-		E429632A2163EDD300A6A9E2 /* ofFbo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofFbo.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofFbo.cpp; sourceTree = SOURCE_ROOT; };
-		E429632B2163EDD300A6A9E2 /* ofLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofLight.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofLight.h; sourceTree = SOURCE_ROOT; };
-		E429632C2163EDD300A6A9E2 /* ofMaterial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMaterial.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofMaterial.h; sourceTree = SOURCE_ROOT; };
-		E429632D2163EDD300A6A9E2 /* ofShader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofShader.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofShader.cpp; sourceTree = SOURCE_ROOT; };
-		E429632E2163EDD300A6A9E2 /* ofBufferObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofBufferObject.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofBufferObject.cpp; sourceTree = SOURCE_ROOT; };
-		E429632F2163EDD300A6A9E2 /* ofVboMesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVboMesh.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofVboMesh.cpp; sourceTree = SOURCE_ROOT; };
-		E42963302163EDD300A6A9E2 /* ofGLUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofGLUtils.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofGLUtils.cpp; sourceTree = SOURCE_ROOT; };
-		E42963312163EDD300A6A9E2 /* ofVbo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVbo.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofVbo.h; sourceTree = SOURCE_ROOT; };
-		E42963322163EDD300A6A9E2 /* ofLight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofLight.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofLight.cpp; sourceTree = SOURCE_ROOT; };
-		E42963332163EDD300A6A9E2 /* ofBufferObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofBufferObject.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofBufferObject.h; sourceTree = SOURCE_ROOT; };
-		E42963342163EDD300A6A9E2 /* ofGLProgrammableRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofGLProgrammableRenderer.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofGLProgrammableRenderer.cpp; sourceTree = SOURCE_ROOT; };
-		E42963382163EDD300A6A9E2 /* ofFbo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofFbo.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofFbo.h; sourceTree = SOURCE_ROOT; };
-		E42963392163EDD300A6A9E2 /* ofGLBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGLBaseTypes.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofGLBaseTypes.h; sourceTree = SOURCE_ROOT; };
-		E429633A2163EDD300A6A9E2 /* ofVbo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVbo.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofVbo.cpp; sourceTree = SOURCE_ROOT; };
-		E429633B2163EDD300A6A9E2 /* ofGLProgrammableRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGLProgrammableRenderer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofGLProgrammableRenderer.h; sourceTree = SOURCE_ROOT; };
-		E429633C2163EDD300A6A9E2 /* ofTexture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofTexture.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofTexture.cpp; sourceTree = SOURCE_ROOT; };
-		E429633D2163EDD300A6A9E2 /* ofGLUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGLUtils.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofGLUtils.h; sourceTree = SOURCE_ROOT; };
-		E429633E2163EDD300A6A9E2 /* ofGLRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofGLRenderer.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofGLRenderer.cpp; sourceTree = SOURCE_ROOT; };
-		E429633F2163EDD300A6A9E2 /* ofGLRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGLRenderer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl/ofGLRenderer.h; sourceTree = SOURCE_ROOT; };
-		E42963412163EDD300A6A9E2 /* ofArduino.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofArduino.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/communication/ofArduino.h; sourceTree = SOURCE_ROOT; };
-		E42963422163EDD300A6A9E2 /* ofSerial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSerial.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/communication/ofSerial.cpp; sourceTree = SOURCE_ROOT; };
-		E42963432163EDD300A6A9E2 /* ofSerial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSerial.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/communication/ofSerial.h; sourceTree = SOURCE_ROOT; };
-		E42963442163EDD300A6A9E2 /* ofArduino.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofArduino.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/communication/ofArduino.cpp; sourceTree = SOURCE_ROOT; };
-		E42963462163EDD300A6A9E2 /* ofEventUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofEventUtils.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/events/ofEventUtils.h; sourceTree = SOURCE_ROOT; };
-		E42963472163EDD300A6A9E2 /* ofEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofEvent.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/events/ofEvent.h; sourceTree = SOURCE_ROOT; };
-		E42963482163EDD300A6A9E2 /* ofEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofEvents.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/events/ofEvents.h; sourceTree = SOURCE_ROOT; };
-		E42963492163EDD300A6A9E2 /* ofEvents.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofEvents.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/events/ofEvents.cpp; sourceTree = SOURCE_ROOT; };
-		E429634B2163EDD300A6A9E2 /* ofGraphicsBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGraphicsBaseTypes.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofGraphicsBaseTypes.h; sourceTree = SOURCE_ROOT; };
-		E429634C2163EDD300A6A9E2 /* ofPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofPath.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofPath.h; sourceTree = SOURCE_ROOT; };
-		E429634D2163EDD300A6A9E2 /* ofBitmapFont.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofBitmapFont.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofBitmapFont.cpp; sourceTree = SOURCE_ROOT; };
-		E429634E2163EDD300A6A9E2 /* ofTrueTypeFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofTrueTypeFont.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofTrueTypeFont.h; sourceTree = SOURCE_ROOT; };
-		E429634F2163EDD300A6A9E2 /* ofTessellator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofTessellator.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofTessellator.cpp; sourceTree = SOURCE_ROOT; };
-		E42963502163EDD300A6A9E2 /* ofGraphics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofGraphics.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofGraphics.cpp; sourceTree = SOURCE_ROOT; };
-		E42963512163EDD300A6A9E2 /* ofPolyline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofPolyline.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofPolyline.h; sourceTree = SOURCE_ROOT; };
-		E42963522163EDD300A6A9E2 /* ofGraphicsBaseTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofGraphicsBaseTypes.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofGraphicsBaseTypes.cpp; sourceTree = SOURCE_ROOT; };
-		E42963532163EDD300A6A9E2 /* ofCairoRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofCairoRenderer.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofCairoRenderer.cpp; sourceTree = SOURCE_ROOT; };
-		E42963542163EDD300A6A9E2 /* ofRendererCollection.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofRendererCollection.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofRendererCollection.cpp; sourceTree = SOURCE_ROOT; };
-		E42963552163EDD300A6A9E2 /* ofPath.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofPath.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofPath.cpp; sourceTree = SOURCE_ROOT; };
-		E42963562163EDD300A6A9E2 /* ofPixels.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofPixels.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofPixels.cpp; sourceTree = SOURCE_ROOT; };
-		E42963572163EDD300A6A9E2 /* ofPolyline.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = ofPolyline.inl; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofPolyline.inl; sourceTree = SOURCE_ROOT; };
-		E42963582163EDD300A6A9E2 /* of3dGraphics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = of3dGraphics.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/of3dGraphics.cpp; sourceTree = SOURCE_ROOT; };
-		E42963592163EDD300A6A9E2 /* ofImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofImage.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofImage.h; sourceTree = SOURCE_ROOT; };
-		E429635A2163EDD300A6A9E2 /* ofPixels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofPixels.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofPixels.h; sourceTree = SOURCE_ROOT; };
-		E429635B2163EDD300A6A9E2 /* ofCairoRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofCairoRenderer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofCairoRenderer.h; sourceTree = SOURCE_ROOT; };
-		E429635C2163EDD300A6A9E2 /* ofBitmapFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofBitmapFont.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofBitmapFont.h; sourceTree = SOURCE_ROOT; };
-		E429635D2163EDD300A6A9E2 /* ofTrueTypeFont.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofTrueTypeFont.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofTrueTypeFont.cpp; sourceTree = SOURCE_ROOT; };
-		E429635E2163EDD300A6A9E2 /* ofRendererCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofRendererCollection.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofRendererCollection.h; sourceTree = SOURCE_ROOT; };
-		E429635F2163EDD300A6A9E2 /* ofGraphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGraphics.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofGraphics.h; sourceTree = SOURCE_ROOT; };
-		E42963602163EDD300A6A9E2 /* ofGraphicsConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGraphicsConstants.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofGraphicsConstants.h; sourceTree = SOURCE_ROOT; };
-		E42963612163EDD300A6A9E2 /* ofImage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofImage.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofImage.cpp; sourceTree = SOURCE_ROOT; };
-		E42963622163EDD300A6A9E2 /* of3dGraphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = of3dGraphics.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/of3dGraphics.h; sourceTree = SOURCE_ROOT; };
-		E42963632163EDD300A6A9E2 /* ofTessellator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofTessellator.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics/ofTessellator.h; sourceTree = SOURCE_ROOT; };
-		E42963652163EDD300A6A9E2 /* ofSoundStream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundStream.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofSoundStream.cpp; sourceTree = SOURCE_ROOT; };
-		E42963662163EDD300A6A9E2 /* ofSoundStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundStream.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofSoundStream.h; sourceTree = SOURCE_ROOT; };
-		E42963672163EDD300A6A9E2 /* ofSoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundPlayer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofSoundPlayer.h; sourceTree = SOURCE_ROOT; };
-		E42963682163EDD300A6A9E2 /* ofOpenALSoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofOpenALSoundPlayer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofOpenALSoundPlayer.h; sourceTree = SOURCE_ROOT; };
-		E42963692163EDD300A6A9E2 /* ofRtAudioSoundStream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofRtAudioSoundStream.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofRtAudioSoundStream.cpp; sourceTree = SOURCE_ROOT; };
-		E429636A2163EDD300A6A9E2 /* ofFmodSoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofFmodSoundPlayer.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofFmodSoundPlayer.cpp; sourceTree = SOURCE_ROOT; };
-		E429636B2163EDD300A6A9E2 /* ofSoundBaseTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundBaseTypes.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofSoundBaseTypes.cpp; sourceTree = SOURCE_ROOT; };
-		E429636C2163EDD300A6A9E2 /* ofOpenALSoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofOpenALSoundPlayer.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofOpenALSoundPlayer.cpp; sourceTree = SOURCE_ROOT; };
-		E429636D2163EDD300A6A9E2 /* ofSoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundPlayer.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofSoundPlayer.cpp; sourceTree = SOURCE_ROOT; };
-		E429636E2163EDD300A6A9E2 /* ofRtAudioSoundStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofRtAudioSoundStream.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofRtAudioSoundStream.h; sourceTree = SOURCE_ROOT; };
-		E429636F2163EDD300A6A9E2 /* ofSoundUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundUtils.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofSoundUtils.h; sourceTree = SOURCE_ROOT; };
-		E42963702163EDD300A6A9E2 /* ofSoundBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundBuffer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofSoundBuffer.h; sourceTree = SOURCE_ROOT; };
-		E42963712163EDD300A6A9E2 /* ofFmodSoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofFmodSoundPlayer.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofFmodSoundPlayer.h; sourceTree = SOURCE_ROOT; };
-		E42963722163EDD300A6A9E2 /* ofSoundBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundBuffer.cpp; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofSoundBuffer.cpp; sourceTree = SOURCE_ROOT; };
-		E42963732163EDD300A6A9E2 /* ofSoundBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundBaseTypes.h; path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound/ofSoundBaseTypes.h; sourceTree = SOURCE_ROOT; };
+		C02ED1AB42ACA6D18B377EDE /* ofxSocketIOData.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ofxSocketIOData.h; path = ../../../addons/ofxSocketIO/src/ofxSocketIOData.h; sourceTree = SOURCE_ROOT; };
+		C14ED2EE3F8F912B55FDE03C /* sio_socket.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sio_socket.h; path = "../../../addons/ofxSocketIO/libs/socket.io-client/include/sio_socket.h"; sourceTree = SOURCE_ROOT; };
+		DC93B9A52589625D3592286D /* sio_client.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sio_client.h; path = "../../../addons/ofxSocketIO/libs/socket.io-client/include/sio_client.h"; sourceTree = SOURCE_ROOT; };
+		E42962AC2163EDD300A6A9E2 /* ofCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofCamera.cpp; path = ../../../libs/openFrameworks/3d/ofCamera.cpp; sourceTree = SOURCE_ROOT; };
+		E42962AD2163EDD300A6A9E2 /* ofMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMesh.h; path = ../../../libs/openFrameworks/3d/ofMesh.h; sourceTree = SOURCE_ROOT; };
+		E42962AE2163EDD300A6A9E2 /* ofNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofNode.h; path = ../../../libs/openFrameworks/3d/ofNode.h; sourceTree = SOURCE_ROOT; };
+		E42962AF2163EDD300A6A9E2 /* ofNode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofNode.cpp; path = ../../../libs/openFrameworks/3d/ofNode.cpp; sourceTree = SOURCE_ROOT; };
+		E42962B02163EDD300A6A9E2 /* of3dPrimitives.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = of3dPrimitives.cpp; path = ../../../libs/openFrameworks/3d/of3dPrimitives.cpp; sourceTree = SOURCE_ROOT; };
+		E42962B12163EDD300A6A9E2 /* of3dUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = of3dUtils.h; path = ../../../libs/openFrameworks/3d/of3dUtils.h; sourceTree = SOURCE_ROOT; };
+		E42962B22163EDD300A6A9E2 /* ofEasyCam.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofEasyCam.cpp; path = ../../../libs/openFrameworks/3d/ofEasyCam.cpp; sourceTree = SOURCE_ROOT; };
+		E42962B32163EDD300A6A9E2 /* ofCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofCamera.h; path = ../../../libs/openFrameworks/3d/ofCamera.h; sourceTree = SOURCE_ROOT; };
+		E42962B42163EDD300A6A9E2 /* ofMesh.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = ofMesh.inl; path = ../../../libs/openFrameworks/3d/ofMesh.inl; sourceTree = SOURCE_ROOT; };
+		E42962B52163EDD300A6A9E2 /* of3dUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = of3dUtils.cpp; path = ../../../libs/openFrameworks/3d/of3dUtils.cpp; sourceTree = SOURCE_ROOT; };
+		E42962B62163EDD300A6A9E2 /* of3dPrimitives.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = of3dPrimitives.h; path = ../../../libs/openFrameworks/3d/of3dPrimitives.h; sourceTree = SOURCE_ROOT; };
+		E42962B72163EDD300A6A9E2 /* ofEasyCam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofEasyCam.h; path = ../../../libs/openFrameworks/3d/ofEasyCam.h; sourceTree = SOURCE_ROOT; };
+		E42962BA2163EDD300A6A9E2 /* ofAVFoundationGrabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAVFoundationGrabber.h; path = ../../../libs/openFrameworks/video/ofAVFoundationGrabber.h; sourceTree = SOURCE_ROOT; };
+		E42962BB2163EDD300A6A9E2 /* ofVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVideoPlayer.h; path = ../../../libs/openFrameworks/video/ofVideoPlayer.h; sourceTree = SOURCE_ROOT; };
+		E42962BC2163EDD300A6A9E2 /* ofAVFoundationPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAVFoundationPlayer.h; path = ../../../libs/openFrameworks/video/ofAVFoundationPlayer.h; sourceTree = SOURCE_ROOT; };
+		E42962BD2163EDD300A6A9E2 /* ofQtUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofQtUtils.cpp; path = ../../../libs/openFrameworks/video/ofQtUtils.cpp; sourceTree = SOURCE_ROOT; };
+		E42962BE2163EDD300A6A9E2 /* ofQTKitGrabber.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ofQTKitGrabber.mm; path = ../../../libs/openFrameworks/video/ofQTKitGrabber.mm; sourceTree = SOURCE_ROOT; };
+		E42962BF2163EDD300A6A9E2 /* ofQuickTimeGrabber.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofQuickTimeGrabber.cpp; path = ../../../libs/openFrameworks/video/ofQuickTimeGrabber.cpp; sourceTree = SOURCE_ROOT; };
+		E42962C12163EDD300A6A9E2 /* ofAVFoundationVideoPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAVFoundationVideoPlayer.h; path = ../../../libs/openFrameworks/video/ofAVFoundationVideoPlayer.h; sourceTree = SOURCE_ROOT; };
+		E42962C22163EDD300A6A9E2 /* ofAVFoundationGrabber.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ofAVFoundationGrabber.mm; path = ../../../libs/openFrameworks/video/ofAVFoundationGrabber.mm; sourceTree = SOURCE_ROOT; };
+		E42962C32163EDD300A6A9E2 /* ofQTKitMovieRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQTKitMovieRenderer.h; path = ../../../libs/openFrameworks/video/ofQTKitMovieRenderer.h; sourceTree = SOURCE_ROOT; };
+		E42962C42163EDD300A6A9E2 /* ofVideoPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVideoPlayer.cpp; path = ../../../libs/openFrameworks/video/ofVideoPlayer.cpp; sourceTree = SOURCE_ROOT; };
+		E42962C52163EDD300A6A9E2 /* ofQTKitGrabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQTKitGrabber.h; path = ../../../libs/openFrameworks/video/ofQTKitGrabber.h; sourceTree = SOURCE_ROOT; };
+		E42962C72163EDD300A6A9E2 /* ofQuickTimeGrabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQuickTimeGrabber.h; path = ../../../libs/openFrameworks/video/ofQuickTimeGrabber.h; sourceTree = SOURCE_ROOT; };
+		E42962C92163EDD300A6A9E2 /* ofQuickTimePlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofQuickTimePlayer.cpp; path = ../../../libs/openFrameworks/video/ofQuickTimePlayer.cpp; sourceTree = SOURCE_ROOT; };
+		E42962CA2163EDD300A6A9E2 /* ofVideoGrabber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVideoGrabber.h; path = ../../../libs/openFrameworks/video/ofVideoGrabber.h; sourceTree = SOURCE_ROOT; };
+		E42962CB2163EDD300A6A9E2 /* ofQTKitPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQTKitPlayer.h; path = ../../../libs/openFrameworks/video/ofQTKitPlayer.h; sourceTree = SOURCE_ROOT; };
+		E42962CD2163EDD300A6A9E2 /* ofQtUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQtUtils.h; path = ../../../libs/openFrameworks/video/ofQtUtils.h; sourceTree = SOURCE_ROOT; };
+		E42962CE2163EDD300A6A9E2 /* ofAVFoundationPlayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ofAVFoundationPlayer.mm; path = ../../../libs/openFrameworks/video/ofAVFoundationPlayer.mm; sourceTree = SOURCE_ROOT; };
+		E42962CF2163EDD300A6A9E2 /* ofQuickTimePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQuickTimePlayer.h; path = ../../../libs/openFrameworks/video/ofQuickTimePlayer.h; sourceTree = SOURCE_ROOT; };
+		E42962D02163EDD300A6A9E2 /* ofVideoGrabber.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVideoGrabber.cpp; path = ../../../libs/openFrameworks/video/ofVideoGrabber.cpp; sourceTree = SOURCE_ROOT; };
+		E42962D52163EDD300A6A9E2 /* ofQTKitPlayer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = ofQTKitPlayer.mm; path = ../../../libs/openFrameworks/video/ofQTKitPlayer.mm; sourceTree = SOURCE_ROOT; };
+		E42962D62163EDD300A6A9E2 /* ofQTKitMovieRenderer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ofQTKitMovieRenderer.m; path = ../../../libs/openFrameworks/video/ofQTKitMovieRenderer.m; sourceTree = SOURCE_ROOT; };
+		E42962D72163EDD300A6A9E2 /* ofAVFoundationVideoPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ofAVFoundationVideoPlayer.m; path = ../../../libs/openFrameworks/video/ofAVFoundationVideoPlayer.m; sourceTree = SOURCE_ROOT; };
+		E42962D92163EDD300A6A9E2 /* ofVideoBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVideoBaseTypes.h; path = ../../../libs/openFrameworks/video/ofVideoBaseTypes.h; sourceTree = SOURCE_ROOT; };
+		E42962DB2163EDD300A6A9E2 /* ofParameterGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofParameterGroup.h; path = ../../../libs/openFrameworks/types/ofParameterGroup.h; sourceTree = SOURCE_ROOT; };
+		E42962DC2163EDD300A6A9E2 /* ofColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofColor.h; path = ../../../libs/openFrameworks/types/ofColor.h; sourceTree = SOURCE_ROOT; };
+		E42962DD2163EDD300A6A9E2 /* ofRectangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofRectangle.cpp; path = ../../../libs/openFrameworks/types/ofRectangle.cpp; sourceTree = SOURCE_ROOT; };
+		E42962DE2163EDD300A6A9E2 /* ofPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofPoint.h; path = ../../../libs/openFrameworks/types/ofPoint.h; sourceTree = SOURCE_ROOT; };
+		E42962DF2163EDD300A6A9E2 /* ofTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofTypes.h; path = ../../../libs/openFrameworks/types/ofTypes.h; sourceTree = SOURCE_ROOT; };
+		E42962E02163EDD300A6A9E2 /* ofRectangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofRectangle.h; path = ../../../libs/openFrameworks/types/ofRectangle.h; sourceTree = SOURCE_ROOT; };
+		E42962E12163EDD300A6A9E2 /* ofBaseTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofBaseTypes.cpp; path = ../../../libs/openFrameworks/types/ofBaseTypes.cpp; sourceTree = SOURCE_ROOT; };
+		E42962E22163EDD300A6A9E2 /* ofParameterGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofParameterGroup.cpp; path = ../../../libs/openFrameworks/types/ofParameterGroup.cpp; sourceTree = SOURCE_ROOT; };
+		E42962E32163EDD300A6A9E2 /* ofParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofParameter.h; path = ../../../libs/openFrameworks/types/ofParameter.h; sourceTree = SOURCE_ROOT; };
+		E42962E42163EDD300A6A9E2 /* ofColor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofColor.cpp; path = ../../../libs/openFrameworks/types/ofColor.cpp; sourceTree = SOURCE_ROOT; };
+		E42962E52163EDD300A6A9E2 /* ofParameter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofParameter.cpp; path = ../../../libs/openFrameworks/types/ofParameter.cpp; sourceTree = SOURCE_ROOT; };
+		E42962E62163EDD300A6A9E2 /* ofBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofBaseTypes.h; path = ../../../libs/openFrameworks/types/ofBaseTypes.h; sourceTree = SOURCE_ROOT; };
+		E42962E82163EDD300A6A9E2 /* ofMainLoop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMainLoop.h; path = ../../../libs/openFrameworks/app/ofMainLoop.h; sourceTree = SOURCE_ROOT; };
+		E42962E92163EDD300A6A9E2 /* ofBaseApp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofBaseApp.cpp; path = ../../../libs/openFrameworks/app/ofBaseApp.cpp; sourceTree = SOURCE_ROOT; };
+		E42962EA2163EDD300A6A9E2 /* ofAppGlutWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofAppGlutWindow.cpp; path = ../../../libs/openFrameworks/app/ofAppGlutWindow.cpp; sourceTree = SOURCE_ROOT; };
+		E42962EB2163EDD300A6A9E2 /* ofWindowSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofWindowSettings.h; path = ../../../libs/openFrameworks/app/ofWindowSettings.h; sourceTree = SOURCE_ROOT; };
+		E42962EC2163EDD300A6A9E2 /* ofAppEGLWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofAppEGLWindow.cpp; path = ../../../libs/openFrameworks/app/ofAppEGLWindow.cpp; sourceTree = SOURCE_ROOT; };
+		E42962ED2163EDD300A6A9E2 /* ofAppBaseWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppBaseWindow.h; path = ../../../libs/openFrameworks/app/ofAppBaseWindow.h; sourceTree = SOURCE_ROOT; };
+		E42962EE2163EDD300A6A9E2 /* ofIcon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofIcon.h; path = ../../../libs/openFrameworks/app/ofIcon.h; sourceTree = SOURCE_ROOT; };
+		E42962EF2163EDD300A6A9E2 /* ofAppNoWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppNoWindow.h; path = ../../../libs/openFrameworks/app/ofAppNoWindow.h; sourceTree = SOURCE_ROOT; };
+		E42962F02163EDD300A6A9E2 /* ofBaseApp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofBaseApp.h; path = ../../../libs/openFrameworks/app/ofBaseApp.h; sourceTree = SOURCE_ROOT; };
+		E42962F12163EDD300A6A9E2 /* ofAppEGLWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppEGLWindow.h; path = ../../../libs/openFrameworks/app/ofAppEGLWindow.h; sourceTree = SOURCE_ROOT; };
+		E42962F22163EDD300A6A9E2 /* ofMainLoop.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMainLoop.cpp; path = ../../../libs/openFrameworks/app/ofMainLoop.cpp; sourceTree = SOURCE_ROOT; };
+		E42962F32163EDD300A6A9E2 /* ofAppRunner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppRunner.h; path = ../../../libs/openFrameworks/app/ofAppRunner.h; sourceTree = SOURCE_ROOT; };
+		E42962F42163EDD300A6A9E2 /* ofAppNoWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofAppNoWindow.cpp; path = ../../../libs/openFrameworks/app/ofAppNoWindow.cpp; sourceTree = SOURCE_ROOT; };
+		E42962F52163EDD300A6A9E2 /* ofAppGLFWWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofAppGLFWWindow.cpp; path = ../../../libs/openFrameworks/app/ofAppGLFWWindow.cpp; sourceTree = SOURCE_ROOT; };
+		E42962F62163EDD300A6A9E2 /* ofAppGlutWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppGlutWindow.h; path = ../../../libs/openFrameworks/app/ofAppGlutWindow.h; sourceTree = SOURCE_ROOT; };
+		E42962F72163EDD300A6A9E2 /* ofAppRunner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofAppRunner.cpp; path = ../../../libs/openFrameworks/app/ofAppRunner.cpp; sourceTree = SOURCE_ROOT; };
+		E42962F82163EDD300A6A9E2 /* ofAppGLFWWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofAppGLFWWindow.h; path = ../../../libs/openFrameworks/app/ofAppGLFWWindow.h; sourceTree = SOURCE_ROOT; };
+		E42962F92163EDD300A6A9E2 /* ofMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMain.h; path = ../../../libs/openFrameworks/ofMain.h; sourceTree = SOURCE_ROOT; };
+		E42962FB2163EDD300A6A9E2 /* ofThreadChannel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofThreadChannel.h; path = ../../../libs/openFrameworks/utils/ofThreadChannel.h; sourceTree = SOURCE_ROOT; };
+		E42962FC2163EDD300A6A9E2 /* ofThread.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofThread.cpp; path = ../../../libs/openFrameworks/utils/ofThread.cpp; sourceTree = SOURCE_ROOT; };
+		E42962FD2163EDD300A6A9E2 /* ofFpsCounter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofFpsCounter.cpp; path = ../../../libs/openFrameworks/utils/ofFpsCounter.cpp; sourceTree = SOURCE_ROOT; };
+		E42962FE2163EDD300A6A9E2 /* ofURLFileLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofURLFileLoader.cpp; path = ../../../libs/openFrameworks/utils/ofURLFileLoader.cpp; sourceTree = SOURCE_ROOT; };
+		E42962FF2163EDD300A6A9E2 /* ofConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofConstants.h; path = ../../../libs/openFrameworks/utils/ofConstants.h; sourceTree = SOURCE_ROOT; };
+		E42963002163EDD300A6A9E2 /* ofXml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofXml.h; path = ../../../libs/openFrameworks/utils/ofXml.h; sourceTree = SOURCE_ROOT; };
+		E42963012163EDD300A6A9E2 /* ofFpsCounter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofFpsCounter.h; path = ../../../libs/openFrameworks/utils/ofFpsCounter.h; sourceTree = SOURCE_ROOT; };
+		E42963022163EDD300A6A9E2 /* ofLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofLog.h; path = ../../../libs/openFrameworks/utils/ofLog.h; sourceTree = SOURCE_ROOT; };
+		E42963032163EDD300A6A9E2 /* ofSystemUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSystemUtils.h; path = ../../../libs/openFrameworks/utils/ofSystemUtils.h; sourceTree = SOURCE_ROOT; };
+		E42963042163EDD300A6A9E2 /* ofSystemUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSystemUtils.cpp; path = ../../../libs/openFrameworks/utils/ofSystemUtils.cpp; sourceTree = SOURCE_ROOT; };
+		E42963052163EDD300A6A9E2 /* ofUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofUtils.h; path = ../../../libs/openFrameworks/utils/ofUtils.h; sourceTree = SOURCE_ROOT; };
+		E42963062163EDD300A6A9E2 /* ofNoise.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofNoise.h; path = ../../../libs/openFrameworks/utils/ofNoise.h; sourceTree = SOURCE_ROOT; };
+		E42963072163EDD300A6A9E2 /* ofLog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofLog.cpp; path = ../../../libs/openFrameworks/utils/ofLog.cpp; sourceTree = SOURCE_ROOT; };
+		E42963082163EDD300A6A9E2 /* ofTimer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofTimer.cpp; path = ../../../libs/openFrameworks/utils/ofTimer.cpp; sourceTree = SOURCE_ROOT; };
+		E42963092163EDD300A6A9E2 /* ofFileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofFileUtils.h; path = ../../../libs/openFrameworks/utils/ofFileUtils.h; sourceTree = SOURCE_ROOT; };
+		E429630A2163EDD300A6A9E2 /* ofThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofThread.h; path = ../../../libs/openFrameworks/utils/ofThread.h; sourceTree = SOURCE_ROOT; };
+		E429630B2163EDD300A6A9E2 /* ofURLFileLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofURLFileLoader.h; path = ../../../libs/openFrameworks/utils/ofURLFileLoader.h; sourceTree = SOURCE_ROOT; };
+		E429630C2163EDD300A6A9E2 /* ofJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofJson.h; path = ../../../libs/openFrameworks/utils/ofJson.h; sourceTree = SOURCE_ROOT; };
+		E429630D2163EDD300A6A9E2 /* ofFileUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofFileUtils.cpp; path = ../../../libs/openFrameworks/utils/ofFileUtils.cpp; sourceTree = SOURCE_ROOT; };
+		E429630E2163EDD300A6A9E2 /* ofMatrixStack.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMatrixStack.cpp; path = ../../../libs/openFrameworks/utils/ofMatrixStack.cpp; sourceTree = SOURCE_ROOT; };
+		E429630F2163EDD300A6A9E2 /* ofUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofUtils.cpp; path = ../../../libs/openFrameworks/utils/ofUtils.cpp; sourceTree = SOURCE_ROOT; };
+		E42963102163EDD300A6A9E2 /* ofXml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofXml.cpp; path = ../../../libs/openFrameworks/utils/ofXml.cpp; sourceTree = SOURCE_ROOT; };
+		E42963112163EDD300A6A9E2 /* ofMatrixStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMatrixStack.h; path = ../../../libs/openFrameworks/utils/ofMatrixStack.h; sourceTree = SOURCE_ROOT; };
+		E42963122163EDD300A6A9E2 /* ofTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofTimer.h; path = ../../../libs/openFrameworks/utils/ofTimer.h; sourceTree = SOURCE_ROOT; };
+		E42963142163EDD300A6A9E2 /* ofVec2f.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVec2f.cpp; path = ../../../libs/openFrameworks/math/ofVec2f.cpp; sourceTree = SOURCE_ROOT; };
+		E42963152163EDD300A6A9E2 /* ofVec4f.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVec4f.cpp; path = ../../../libs/openFrameworks/math/ofVec4f.cpp; sourceTree = SOURCE_ROOT; };
+		E42963162163EDD300A6A9E2 /* ofVec4f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVec4f.h; path = ../../../libs/openFrameworks/math/ofVec4f.h; sourceTree = SOURCE_ROOT; };
+		E42963172163EDD300A6A9E2 /* ofMath.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMath.cpp; path = ../../../libs/openFrameworks/math/ofMath.cpp; sourceTree = SOURCE_ROOT; };
+		E42963182163EDD300A6A9E2 /* ofMathConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMathConstants.h; path = ../../../libs/openFrameworks/math/ofMathConstants.h; sourceTree = SOURCE_ROOT; };
+		E42963192163EDD300A6A9E2 /* ofMatrix4x4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMatrix4x4.h; path = ../../../libs/openFrameworks/math/ofMatrix4x4.h; sourceTree = SOURCE_ROOT; };
+		E429631A2163EDD300A6A9E2 /* ofVec3f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVec3f.h; path = ../../../libs/openFrameworks/math/ofVec3f.h; sourceTree = SOURCE_ROOT; };
+		E429631B2163EDD300A6A9E2 /* ofMatrix3x3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMatrix3x3.cpp; path = ../../../libs/openFrameworks/math/ofMatrix3x3.cpp; sourceTree = SOURCE_ROOT; };
+		E429631C2163EDD300A6A9E2 /* ofMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMath.h; path = ../../../libs/openFrameworks/math/ofMath.h; sourceTree = SOURCE_ROOT; };
+		E429631D2163EDD300A6A9E2 /* ofQuaternion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofQuaternion.h; path = ../../../libs/openFrameworks/math/ofQuaternion.h; sourceTree = SOURCE_ROOT; };
+		E429631E2163EDD300A6A9E2 /* ofVectorMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVectorMath.h; path = ../../../libs/openFrameworks/math/ofVectorMath.h; sourceTree = SOURCE_ROOT; };
+		E429631F2163EDD300A6A9E2 /* ofQuaternion.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofQuaternion.cpp; path = ../../../libs/openFrameworks/math/ofQuaternion.cpp; sourceTree = SOURCE_ROOT; };
+		E42963202163EDD300A6A9E2 /* ofVec2f.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVec2f.h; path = ../../../libs/openFrameworks/math/ofVec2f.h; sourceTree = SOURCE_ROOT; };
+		E42963212163EDD300A6A9E2 /* ofMatrix4x4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMatrix4x4.cpp; path = ../../../libs/openFrameworks/math/ofMatrix4x4.cpp; sourceTree = SOURCE_ROOT; };
+		E42963222163EDD300A6A9E2 /* ofMatrix3x3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMatrix3x3.h; path = ../../../libs/openFrameworks/math/ofMatrix3x3.h; sourceTree = SOURCE_ROOT; };
+		E42963262163EDD300A6A9E2 /* ofVboMesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVboMesh.h; path = ../../../libs/openFrameworks/gl/ofVboMesh.h; sourceTree = SOURCE_ROOT; };
+		E42963272163EDD300A6A9E2 /* ofTexture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofTexture.h; path = ../../../libs/openFrameworks/gl/ofTexture.h; sourceTree = SOURCE_ROOT; };
+		E42963282163EDD300A6A9E2 /* ofShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofShader.h; path = ../../../libs/openFrameworks/gl/ofShader.h; sourceTree = SOURCE_ROOT; };
+		E42963292163EDD300A6A9E2 /* ofMaterial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofMaterial.cpp; path = ../../../libs/openFrameworks/gl/ofMaterial.cpp; sourceTree = SOURCE_ROOT; };
+		E429632A2163EDD300A6A9E2 /* ofFbo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofFbo.cpp; path = ../../../libs/openFrameworks/gl/ofFbo.cpp; sourceTree = SOURCE_ROOT; };
+		E429632B2163EDD300A6A9E2 /* ofLight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofLight.h; path = ../../../libs/openFrameworks/gl/ofLight.h; sourceTree = SOURCE_ROOT; };
+		E429632C2163EDD300A6A9E2 /* ofMaterial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofMaterial.h; path = ../../../libs/openFrameworks/gl/ofMaterial.h; sourceTree = SOURCE_ROOT; };
+		E429632D2163EDD300A6A9E2 /* ofShader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofShader.cpp; path = ../../../libs/openFrameworks/gl/ofShader.cpp; sourceTree = SOURCE_ROOT; };
+		E429632E2163EDD300A6A9E2 /* ofBufferObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofBufferObject.cpp; path = ../../../libs/openFrameworks/gl/ofBufferObject.cpp; sourceTree = SOURCE_ROOT; };
+		E429632F2163EDD300A6A9E2 /* ofVboMesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVboMesh.cpp; path = ../../../libs/openFrameworks/gl/ofVboMesh.cpp; sourceTree = SOURCE_ROOT; };
+		E42963302163EDD300A6A9E2 /* ofGLUtils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofGLUtils.cpp; path = ../../../libs/openFrameworks/gl/ofGLUtils.cpp; sourceTree = SOURCE_ROOT; };
+		E42963312163EDD300A6A9E2 /* ofVbo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofVbo.h; path = ../../../libs/openFrameworks/gl/ofVbo.h; sourceTree = SOURCE_ROOT; };
+		E42963322163EDD300A6A9E2 /* ofLight.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofLight.cpp; path = ../../../libs/openFrameworks/gl/ofLight.cpp; sourceTree = SOURCE_ROOT; };
+		E42963332163EDD300A6A9E2 /* ofBufferObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofBufferObject.h; path = ../../../libs/openFrameworks/gl/ofBufferObject.h; sourceTree = SOURCE_ROOT; };
+		E42963342163EDD300A6A9E2 /* ofGLProgrammableRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofGLProgrammableRenderer.cpp; path = ../../../libs/openFrameworks/gl/ofGLProgrammableRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		E42963382163EDD300A6A9E2 /* ofFbo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofFbo.h; path = ../../../libs/openFrameworks/gl/ofFbo.h; sourceTree = SOURCE_ROOT; };
+		E42963392163EDD300A6A9E2 /* ofGLBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGLBaseTypes.h; path = ../../../libs/openFrameworks/gl/ofGLBaseTypes.h; sourceTree = SOURCE_ROOT; };
+		E429633A2163EDD300A6A9E2 /* ofVbo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofVbo.cpp; path = ../../../libs/openFrameworks/gl/ofVbo.cpp; sourceTree = SOURCE_ROOT; };
+		E429633B2163EDD300A6A9E2 /* ofGLProgrammableRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGLProgrammableRenderer.h; path = ../../../libs/openFrameworks/gl/ofGLProgrammableRenderer.h; sourceTree = SOURCE_ROOT; };
+		E429633C2163EDD300A6A9E2 /* ofTexture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofTexture.cpp; path = ../../../libs/openFrameworks/gl/ofTexture.cpp; sourceTree = SOURCE_ROOT; };
+		E429633D2163EDD300A6A9E2 /* ofGLUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGLUtils.h; path = ../../../libs/openFrameworks/gl/ofGLUtils.h; sourceTree = SOURCE_ROOT; };
+		E429633E2163EDD300A6A9E2 /* ofGLRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofGLRenderer.cpp; path = ../../../libs/openFrameworks/gl/ofGLRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		E429633F2163EDD300A6A9E2 /* ofGLRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGLRenderer.h; path = ../../../libs/openFrameworks/gl/ofGLRenderer.h; sourceTree = SOURCE_ROOT; };
+		E42963412163EDD300A6A9E2 /* ofArduino.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofArduino.h; path = ../../../libs/openFrameworks/communication/ofArduino.h; sourceTree = SOURCE_ROOT; };
+		E42963422163EDD300A6A9E2 /* ofSerial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSerial.cpp; path = ../../../libs/openFrameworks/communication/ofSerial.cpp; sourceTree = SOURCE_ROOT; };
+		E42963432163EDD300A6A9E2 /* ofSerial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSerial.h; path = ../../../libs/openFrameworks/communication/ofSerial.h; sourceTree = SOURCE_ROOT; };
+		E42963442163EDD300A6A9E2 /* ofArduino.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofArduino.cpp; path = ../../../libs/openFrameworks/communication/ofArduino.cpp; sourceTree = SOURCE_ROOT; };
+		E42963462163EDD300A6A9E2 /* ofEventUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofEventUtils.h; path = ../../../libs/openFrameworks/events/ofEventUtils.h; sourceTree = SOURCE_ROOT; };
+		E42963472163EDD300A6A9E2 /* ofEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofEvent.h; path = ../../../libs/openFrameworks/events/ofEvent.h; sourceTree = SOURCE_ROOT; };
+		E42963482163EDD300A6A9E2 /* ofEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofEvents.h; path = ../../../libs/openFrameworks/events/ofEvents.h; sourceTree = SOURCE_ROOT; };
+		E42963492163EDD300A6A9E2 /* ofEvents.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofEvents.cpp; path = ../../../libs/openFrameworks/events/ofEvents.cpp; sourceTree = SOURCE_ROOT; };
+		E429634B2163EDD300A6A9E2 /* ofGraphicsBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGraphicsBaseTypes.h; path = ../../../libs/openFrameworks/graphics/ofGraphicsBaseTypes.h; sourceTree = SOURCE_ROOT; };
+		E429634C2163EDD300A6A9E2 /* ofPath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofPath.h; path = ../../../libs/openFrameworks/graphics/ofPath.h; sourceTree = SOURCE_ROOT; };
+		E429634D2163EDD300A6A9E2 /* ofBitmapFont.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofBitmapFont.cpp; path = ../../../libs/openFrameworks/graphics/ofBitmapFont.cpp; sourceTree = SOURCE_ROOT; };
+		E429634E2163EDD300A6A9E2 /* ofTrueTypeFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofTrueTypeFont.h; path = ../../../libs/openFrameworks/graphics/ofTrueTypeFont.h; sourceTree = SOURCE_ROOT; };
+		E429634F2163EDD300A6A9E2 /* ofTessellator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofTessellator.cpp; path = ../../../libs/openFrameworks/graphics/ofTessellator.cpp; sourceTree = SOURCE_ROOT; };
+		E42963502163EDD300A6A9E2 /* ofGraphics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofGraphics.cpp; path = ../../../libs/openFrameworks/graphics/ofGraphics.cpp; sourceTree = SOURCE_ROOT; };
+		E42963512163EDD300A6A9E2 /* ofPolyline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofPolyline.h; path = ../../../libs/openFrameworks/graphics/ofPolyline.h; sourceTree = SOURCE_ROOT; };
+		E42963522163EDD300A6A9E2 /* ofGraphicsBaseTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofGraphicsBaseTypes.cpp; path = ../../../libs/openFrameworks/graphics/ofGraphicsBaseTypes.cpp; sourceTree = SOURCE_ROOT; };
+		E42963532163EDD300A6A9E2 /* ofCairoRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofCairoRenderer.cpp; path = ../../../libs/openFrameworks/graphics/ofCairoRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		E42963542163EDD300A6A9E2 /* ofRendererCollection.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofRendererCollection.cpp; path = ../../../libs/openFrameworks/graphics/ofRendererCollection.cpp; sourceTree = SOURCE_ROOT; };
+		E42963552163EDD300A6A9E2 /* ofPath.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofPath.cpp; path = ../../../libs/openFrameworks/graphics/ofPath.cpp; sourceTree = SOURCE_ROOT; };
+		E42963562163EDD300A6A9E2 /* ofPixels.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofPixels.cpp; path = ../../../libs/openFrameworks/graphics/ofPixels.cpp; sourceTree = SOURCE_ROOT; };
+		E42963572163EDD300A6A9E2 /* ofPolyline.inl */ = {isa = PBXFileReference; lastKnownFileType = text; name = ofPolyline.inl; path = ../../../libs/openFrameworks/graphics/ofPolyline.inl; sourceTree = SOURCE_ROOT; };
+		E42963582163EDD300A6A9E2 /* of3dGraphics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = of3dGraphics.cpp; path = ../../../libs/openFrameworks/graphics/of3dGraphics.cpp; sourceTree = SOURCE_ROOT; };
+		E42963592163EDD300A6A9E2 /* ofImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofImage.h; path = ../../../libs/openFrameworks/graphics/ofImage.h; sourceTree = SOURCE_ROOT; };
+		E429635A2163EDD300A6A9E2 /* ofPixels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofPixels.h; path = ../../../libs/openFrameworks/graphics/ofPixels.h; sourceTree = SOURCE_ROOT; };
+		E429635B2163EDD300A6A9E2 /* ofCairoRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofCairoRenderer.h; path = ../../../libs/openFrameworks/graphics/ofCairoRenderer.h; sourceTree = SOURCE_ROOT; };
+		E429635C2163EDD300A6A9E2 /* ofBitmapFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofBitmapFont.h; path = ../../../libs/openFrameworks/graphics/ofBitmapFont.h; sourceTree = SOURCE_ROOT; };
+		E429635D2163EDD300A6A9E2 /* ofTrueTypeFont.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofTrueTypeFont.cpp; path = ../../../libs/openFrameworks/graphics/ofTrueTypeFont.cpp; sourceTree = SOURCE_ROOT; };
+		E429635E2163EDD300A6A9E2 /* ofRendererCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofRendererCollection.h; path = ../../../libs/openFrameworks/graphics/ofRendererCollection.h; sourceTree = SOURCE_ROOT; };
+		E429635F2163EDD300A6A9E2 /* ofGraphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGraphics.h; path = ../../../libs/openFrameworks/graphics/ofGraphics.h; sourceTree = SOURCE_ROOT; };
+		E42963602163EDD300A6A9E2 /* ofGraphicsConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofGraphicsConstants.h; path = ../../../libs/openFrameworks/graphics/ofGraphicsConstants.h; sourceTree = SOURCE_ROOT; };
+		E42963612163EDD300A6A9E2 /* ofImage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofImage.cpp; path = ../../../libs/openFrameworks/graphics/ofImage.cpp; sourceTree = SOURCE_ROOT; };
+		E42963622163EDD300A6A9E2 /* of3dGraphics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = of3dGraphics.h; path = ../../../libs/openFrameworks/graphics/of3dGraphics.h; sourceTree = SOURCE_ROOT; };
+		E42963632163EDD300A6A9E2 /* ofTessellator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofTessellator.h; path = ../../../libs/openFrameworks/graphics/ofTessellator.h; sourceTree = SOURCE_ROOT; };
+		E42963652163EDD300A6A9E2 /* ofSoundStream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundStream.cpp; path = ../../../libs/openFrameworks/sound/ofSoundStream.cpp; sourceTree = SOURCE_ROOT; };
+		E42963662163EDD300A6A9E2 /* ofSoundStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundStream.h; path = ../../../libs/openFrameworks/sound/ofSoundStream.h; sourceTree = SOURCE_ROOT; };
+		E42963672163EDD300A6A9E2 /* ofSoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundPlayer.h; path = ../../../libs/openFrameworks/sound/ofSoundPlayer.h; sourceTree = SOURCE_ROOT; };
+		E42963682163EDD300A6A9E2 /* ofOpenALSoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofOpenALSoundPlayer.h; path = ../../../libs/openFrameworks/sound/ofOpenALSoundPlayer.h; sourceTree = SOURCE_ROOT; };
+		E42963692163EDD300A6A9E2 /* ofRtAudioSoundStream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofRtAudioSoundStream.cpp; path = ../../../libs/openFrameworks/sound/ofRtAudioSoundStream.cpp; sourceTree = SOURCE_ROOT; };
+		E429636A2163EDD300A6A9E2 /* ofFmodSoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofFmodSoundPlayer.cpp; path = ../../../libs/openFrameworks/sound/ofFmodSoundPlayer.cpp; sourceTree = SOURCE_ROOT; };
+		E429636B2163EDD300A6A9E2 /* ofSoundBaseTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundBaseTypes.cpp; path = ../../../libs/openFrameworks/sound/ofSoundBaseTypes.cpp; sourceTree = SOURCE_ROOT; };
+		E429636C2163EDD300A6A9E2 /* ofOpenALSoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofOpenALSoundPlayer.cpp; path = ../../../libs/openFrameworks/sound/ofOpenALSoundPlayer.cpp; sourceTree = SOURCE_ROOT; };
+		E429636D2163EDD300A6A9E2 /* ofSoundPlayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundPlayer.cpp; path = ../../../libs/openFrameworks/sound/ofSoundPlayer.cpp; sourceTree = SOURCE_ROOT; };
+		E429636E2163EDD300A6A9E2 /* ofRtAudioSoundStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofRtAudioSoundStream.h; path = ../../../libs/openFrameworks/sound/ofRtAudioSoundStream.h; sourceTree = SOURCE_ROOT; };
+		E429636F2163EDD300A6A9E2 /* ofSoundUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundUtils.h; path = ../../../libs/openFrameworks/sound/ofSoundUtils.h; sourceTree = SOURCE_ROOT; };
+		E42963702163EDD300A6A9E2 /* ofSoundBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundBuffer.h; path = ../../../libs/openFrameworks/sound/ofSoundBuffer.h; sourceTree = SOURCE_ROOT; };
+		E42963712163EDD300A6A9E2 /* ofFmodSoundPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofFmodSoundPlayer.h; path = ../../../libs/openFrameworks/sound/ofFmodSoundPlayer.h; sourceTree = SOURCE_ROOT; };
+		E42963722163EDD300A6A9E2 /* ofSoundBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ofSoundBuffer.cpp; path = ../../../libs/openFrameworks/sound/ofSoundBuffer.cpp; sourceTree = SOURCE_ROOT; };
+		E42963732163EDD300A6A9E2 /* ofSoundBaseTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ofSoundBaseTypes.h; path = ../../../libs/openFrameworks/sound/ofSoundBaseTypes.h; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* DM 6103 FinalDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DM 6103 FinalDebug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ofApp.cpp; path = src/ofApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
-		E7E3D6112284AEF400A4FDDA /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
-		EC67728E5EF070FA74834182 /* sio_socket.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sio_socket.h; path = "../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/include/sio_socket.h"; sourceTree = SOURCE_ROOT; };
-		FD593E663C159A81EAD79C02 /* sio_message.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = sio_message.h; path = "../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/include/sio_message.h"; sourceTree = SOURCE_ROOT; };
+		E794E7C52284BEFF00EE683E /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = bin/data; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,9 +282,9 @@
 		84538363DF095F090FF43FBF /* include */ = {
 			isa = PBXGroup;
 			children = (
-				D9EB2323451F5E34786333B8 /* sio_client.h */,
-				FD593E663C159A81EAD79C02 /* sio_message.h */,
-				EC67728E5EF070FA74834182 /* sio_socket.h */,
+				DC93B9A52589625D3592286D /* sio_client.h */,
+				377CC4A6E20C685706D363AA /* sio_message.h */,
+				C14ED2EE3F8F912B55FDE03C /* sio_socket.h */,
 			);
 			name = include;
 			sourceTree = "<group>";
@@ -292,10 +292,10 @@
 		90E9E194F97CB6FBFA12FB15 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				176E097D53D1B0D55B83E50C /* ofxSocketIO.cpp */,
-				C76107CF4B231F5F6BA79F73 /* ofxSocketIO.h */,
-				2F59D7B0E7A54C632B055DC2 /* ofxSocketIOData.cpp */,
-				B3DF4F6F9A60C19FFA358DC7 /* ofxSocketIOData.h */,
+				0A96C398AD37CAFA23F824F3 /* ofxSocketIO.cpp */,
+				9D3D8BF6F1454309C9E6A63D /* ofxSocketIO.h */,
+				88E410C91B288244EB10D96C /* ofxSocketIOData.cpp */,
+				C02ED1AB42ACA6D18B377EDE /* ofxSocketIOData.h */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -341,6 +341,7 @@
 				E42962B82163EDD300A6A9E2 /* video */,
 			);
 			name = openFrameworks;
+			path = ../../../libs/openFrameworks;
 			sourceTree = "<group>";
 		};
 		E42962AB2163EDD300A6A9E2 /* 3d */ = {
@@ -360,7 +361,7 @@
 				E42962AE2163EDD300A6A9E2 /* ofNode.h */,
 			);
 			name = 3d;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/3d;
+			path = ../../../libs/openFrameworks/3d;
 			sourceTree = SOURCE_ROOT;
 		};
 		E42962B82163EDD300A6A9E2 /* video */ = {
@@ -391,7 +392,7 @@
 				E42962BB2163EDD300A6A9E2 /* ofVideoPlayer.h */,
 			);
 			name = video;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/video;
+			path = ../../../libs/openFrameworks/video;
 			sourceTree = SOURCE_ROOT;
 		};
 		E42962DA2163EDD300A6A9E2 /* types */ = {
@@ -411,7 +412,7 @@
 				E42962DF2163EDD300A6A9E2 /* ofTypes.h */,
 			);
 			name = types;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/types;
+			path = ../../../libs/openFrameworks/types;
 			sourceTree = SOURCE_ROOT;
 		};
 		E42962E72163EDD300A6A9E2 /* app */ = {
@@ -436,7 +437,7 @@
 				E42962EB2163EDD300A6A9E2 /* ofWindowSettings.h */,
 			);
 			name = app;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/app;
+			path = ../../../libs/openFrameworks/app;
 			sourceTree = SOURCE_ROOT;
 		};
 		E42962FA2163EDD300A6A9E2 /* utils */ = {
@@ -468,7 +469,7 @@
 				E42963002163EDD300A6A9E2 /* ofXml.h */,
 			);
 			name = utils;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/utils;
+			path = ../../../libs/openFrameworks/utils;
 			sourceTree = SOURCE_ROOT;
 		};
 		E42963132163EDD300A6A9E2 /* math */ = {
@@ -491,7 +492,7 @@
 				E429631E2163EDD300A6A9E2 /* ofVectorMath.h */,
 			);
 			name = math;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/math;
+			path = ../../../libs/openFrameworks/math;
 			sourceTree = SOURCE_ROOT;
 		};
 		E42963252163EDD300A6A9E2 /* gl */ = {
@@ -522,7 +523,7 @@
 				E42963262163EDD300A6A9E2 /* ofVboMesh.h */,
 			);
 			name = gl;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/gl;
+			path = ../../../libs/openFrameworks/gl;
 			sourceTree = SOURCE_ROOT;
 		};
 		E42963402163EDD300A6A9E2 /* communication */ = {
@@ -534,7 +535,7 @@
 				E42963432163EDD300A6A9E2 /* ofSerial.h */,
 			);
 			name = communication;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/communication;
+			path = ../../../libs/openFrameworks/communication;
 			sourceTree = SOURCE_ROOT;
 		};
 		E42963452163EDD300A6A9E2 /* events */ = {
@@ -546,7 +547,7 @@
 				E42963462163EDD300A6A9E2 /* ofEventUtils.h */,
 			);
 			name = events;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/events;
+			path = ../../../libs/openFrameworks/events;
 			sourceTree = SOURCE_ROOT;
 		};
 		E429634A2163EDD300A6A9E2 /* graphics */ = {
@@ -579,7 +580,7 @@
 				E429634E2163EDD300A6A9E2 /* ofTrueTypeFont.h */,
 			);
 			name = graphics;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/graphics;
+			path = ../../../libs/openFrameworks/graphics;
 			sourceTree = SOURCE_ROOT;
 		};
 		E42963642163EDD300A6A9E2 /* sound */ = {
@@ -602,7 +603,7 @@
 				E429636F2163EDD300A6A9E2 /* ofSoundUtils.h */,
 			);
 			name = sound;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks/sound;
+			path = ../../../libs/openFrameworks/sound;
 			sourceTree = SOURCE_ROOT;
 		};
 		E4B69B4A0A3A1720003C02F2 = {
@@ -615,7 +616,7 @@
 				BB4B014C10F69532006C3DED /* addons */,
 				6948EE371B920CB800B5AC1A /* local_addons */,
 				E4B69B5B0A3A1756003C02F2 /* DM 6103 FinalDebug.app */,
-				E7E3D6112284AEF400A4FDDA /* data */,
+				E794E7C52284BEFF00EE683E /* data */,
 			);
 			sourceTree = "<group>";
 		};
@@ -740,8 +741,8 @@
 				F8C88094A2BDB5FA6DA3B093 /* FastNoiseSIMD_avx2.cpp in Sources */,
 				6B4E42B39683C16B1A84BDA6 /* FastNoiseSIMD_neon.cpp in Sources */,
 				83EE1E81D2EEAEB75A4D7D75 /* FastNoiseSIMD.cpp in Sources */,
-				15AFFB70F73A26F0EF25B83A /* ofxSocketIO.cpp in Sources */,
-				65943DE499064018865FE537 /* ofxSocketIOData.cpp in Sources */,
+				08364DFD3A7CBC6885885276 /* ofxSocketIO.cpp in Sources */,
+				E30CC3BB5A2CC97C82A79C87 /* ofxSocketIOData.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,13 +775,13 @@
 					src,
 					src,
 					src/FastNoiseSIMD,
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs,
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/include",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx",
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/src,
+					../../../addons/ofxSocketIO/libs,
+					"../../../addons/ofxSocketIO/libs/socket.io-client",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/include",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx",
+					../../../addons/ofxSocketIO/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -808,13 +809,13 @@
 					src,
 					src,
 					src/FastNoiseSIMD,
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs,
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/include",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx",
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/src,
+					../../../addons/ofxSocketIO/libs,
+					"../../../addons/ofxSocketIO/libs/socket.io-client",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/include",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx",
+					../../../addons/ofxSocketIO/src,
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -825,10 +826,10 @@
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
 					"$(LIB_OF)",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libsioclient.a",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_random-mt.a",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_date_time-mt.a",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_system-mt.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libsioclient.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_random-mt.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_date_time-mt.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_system-mt.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -860,13 +861,13 @@
 					src,
 					src,
 					src/FastNoiseSIMD,
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs,
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/include",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx",
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/src,
+					../../../addons/ofxSocketIO/libs,
+					"../../../addons/ofxSocketIO/libs/socket.io-client",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/include",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx",
+					../../../addons/ofxSocketIO/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
@@ -905,13 +906,13 @@
 					src,
 					src,
 					src/FastNoiseSIMD,
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs,
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/include",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx",
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/src,
+					../../../addons/ofxSocketIO/libs,
+					"../../../addons/ofxSocketIO/libs/socket.io-client",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/include",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx",
+					../../../addons/ofxSocketIO/src,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -939,13 +940,13 @@
 					src,
 					src,
 					src/FastNoiseSIMD,
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs,
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/include",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx",
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/src,
+					../../../addons/ofxSocketIO/libs,
+					"../../../addons/ofxSocketIO/libs/socket.io-client",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/include",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx",
+					../../../addons/ofxSocketIO/src,
 				);
 				ICON = "$(ICON_NAME_DEBUG)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -956,10 +957,10 @@
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
 					"$(LIB_OF_DEBUG)",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libsioclient.a",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_random-mt.a",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_date_time-mt.a",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_system-mt.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libsioclient.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_random-mt.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_date_time-mt.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_system-mt.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
 				WRAPPER_EXTENSION = app;
@@ -980,13 +981,13 @@
 					src,
 					src,
 					src/FastNoiseSIMD,
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs,
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/include",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx",
-					../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/src,
+					../../../addons/ofxSocketIO/libs,
+					"../../../addons/ofxSocketIO/libs/socket.io-client",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/include",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/linuxarmv6l",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx",
+					../../../addons/ofxSocketIO/src,
 				);
 				ICON = "$(ICON_NAME_RELEASE)";
 				ICON_FILE = "$(ICON_FILE_PATH)$(ICON)";
@@ -997,10 +998,10 @@
 					"$(OF_CORE_LIBS)",
 					"$(OF_CORE_FRAMEWORKS)",
 					"$(LIB_OF)",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libsioclient.a",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_random-mt.a",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_date_time-mt.a",
-					"../../../../../Dev/OpenFrameworks/addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_system-mt.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libsioclient.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_random-mt.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_date_time-mt.a",
+					"../../../addons/ofxSocketIO/libs/socket.io-client/lib/osx/libboost_system-mt.a",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

@@ -31,10 +31,10 @@
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD.cpp">
 			<Filter>src\FastNoiseSIMD</Filter>
 		</ClCompile>
-		<ClCompile Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIOData.cpp">
+		<ClCompile Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIOData.cpp">
 			<Filter>addons\ofxSocketIO\src</Filter>
 		</ClCompile>
-		<ClCompile Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIO.cpp">
+		<ClCompile Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIO.cpp">
 			<Filter>addons\ofxSocketIO\src</Filter>
 		</ClCompile>
 	</ItemGroup>
@@ -77,19 +77,19 @@
 		<ClInclude Include="src\ofSecond.h">
 			<Filter>src</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIOData.h">
+		<ClInclude Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIOData.h">
 			<Filter>addons\ofxSocketIO\src</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\src\ofxSocketIO.h">
+		<ClInclude Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIO.h">
 			<Filter>addons\ofxSocketIO\src</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include\sio_socket.h">
+		<ClInclude Include="..\..\..\addons\ofxSocketIO\libs\socket.io-client\include\sio_socket.h">
 			<Filter>addons\ofxSocketIO\libs\socket.io-client\include</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include\sio_message.h">
+		<ClInclude Include="..\..\..\addons\ofxSocketIO\libs\socket.io-client\include\sio_message.h">
 			<Filter>addons\ofxSocketIO\libs\socket.io-client\include</Filter>
 		</ClInclude>
-		<ClInclude Include="..\..\..\..\..\Dev\OpenFrameworks\addons\ofxSocketIO\libs\socket.io-client\include\sio_client.h">
+		<ClInclude Include="..\..\..\addons\ofxSocketIO\libs\socket.io-client\include\sio_client.h">
 			<Filter>addons\ofxSocketIO\libs\socket.io-client\include</Filter>
 		</ClInclude>
 	</ItemGroup>

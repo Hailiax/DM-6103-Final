@@ -37,6 +37,9 @@ int main(){
     shared_ptr<ofSecond> secondApp(new ofSecond);
     secondApp->main = mainApp;
     
+    ofSetWindowTitle("DM 6013 Final");
+    ofSetEscapeQuitsApp(false);
+    
     ofRunApp(mainWindow, mainApp);
     ofRunApp(secondWindow, secondApp);
     ofRunMainLoop();
