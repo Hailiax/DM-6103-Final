@@ -341,7 +341,6 @@
 				E42962B82163EDD300A6A9E2 /* video */,
 			);
 			name = openFrameworks;
-			path = ../../../../../Dev/OpenFrameworks/libs/openFrameworks;
 			sourceTree = "<group>";
 		};
 		E42962AB2163EDD300A6A9E2 /* 3d */ = {
