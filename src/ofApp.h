@@ -27,8 +27,8 @@ public:
     
     void threadedFunction(){
         // Generate noise sets from settings
-        float* noiseSet1 = fractalNoise1->GetValueFractalSet(0, 0, z, fractalRes, fractalRes, 1);
-        float* noiseSet2 = fractalNoise2->GetValueFractalSet(0, 0, z, fractalRes, fractalRes, 1);
+        float* noiseSet1 = fractalNoise1->GetValueFractalSet(0, 0, frame/2, fractalRes, fractalRes, 1);
+        float* noiseSet2 = fractalNoise2->GetValueFractalSet(0, 0, frame/2, fractalRes, fractalRes, 1);
         
         // Load noise data from noise sets onto vector
         for (int i = 0; i < fractalRes*fractalRes; i++){
@@ -40,13 +40,12 @@ public:
         // Free noise sets from memory
         FastNoiseSIMD::FreeNoiseSet(noiseSet1);
         FastNoiseSIMD::FreeNoiseSet(noiseSet2);
-        
-        // Increment on Z space to evolve fractal
-        z += 10;
     }
     
     // How dense the noise is
     float fractalScale = 0.01;
+    // Frame for z value for noise evolution
+    uint64 frame = 0;
     // Data in vector for external access
     vector<float>* fractalVec;
     
@@ -54,9 +53,6 @@ private:
     // Internal noise settings
     FastNoiseSIMD* fractalNoise1;
     FastNoiseSIMD* fractalNoise2;
-    
-    // Internal noise setting data
-    uint64 z = 0;
     int fractalRes;
 };
 

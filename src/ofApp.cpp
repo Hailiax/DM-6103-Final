@@ -4,6 +4,13 @@
 
 //
 // Note: there are computer specific settings for: OpenGL 3, SIMD 4.1, and Apple Clang
+// Ensure to use at least these compiler settings for FastNoise: https://github.com/Auburns/FastNoiseSIMD/wiki/Compiler-Settings
+// For Xcode: Use compiler setting -std=c++11 and -mfma, and the following for individual files:
+// FastNoiseSIMD_sse2.cpp: -msse2
+// FastNoiseSIMD_sse41.cpp: -msse4.1
+// FastNoiseSIMD_avx2.cpp: -mavx2
+// FastNoiseSIMD_avx512.cpp: -mavx512f
+//
 // XY positions [0,1] are received from kinect/software via websockets on a local server
 //
 
@@ -153,6 +160,7 @@ void ofApp::update(){
     // Create new fractal on different thread
     if (!fractalGenerator.isThreadRunning()){
         fractal.getTexture().loadData(fractalGenerator.fractalVec->data(), fractalRes, fractalRes, GL_RGB);
+        fractalGenerator.frame = ofGetFrameNum();
         fractalGenerator.startThread();
     }
     
@@ -439,7 +447,7 @@ void ofApp::draw(){
     frameMesh.draw();
     
     // log status of sockets
-    cout << ofApp::status << endl;
+//    cout << ofApp::status << endl;
     
     // Second half is drawn in ofSecond
 }
@@ -475,7 +483,7 @@ void ofApp::keyPressed(int key){
         attractToggle = false;
     } // phase 3 play with effects try adding random side velocities or mod y position to multiply x vel
     
-    // Change colors/thresholds in densityFilter
+    // Change colors/thresholds in densityFilter. More variation in thresh towards 0
     else if (key == 'z'){
         sThresh[0] = 0.9625;
         sThresh[1] = 0.5;
@@ -487,15 +495,15 @@ void ofApp::keyPressed(int key){
         sColor[3] = 0x181F54;
         sColor[4] = 0x000000;
     } else if (key == 'x'){
-        sThresh[0] = 0.9625;
-        sThresh[1] = 0.5;
-        sThresh[2] = 0.8;
+        sThresh[0] = 0.4;
+        sThresh[1] = 0.09;
+        sThresh[2] = 0.06;
         sThresh[3] = 0.01;
-        sColor[0] = 0xFFFFFF;
+        sColor[0] = 0x0027FF;
         sColor[1] = 0x37FFF6;
         sColor[2] = 0x3AFF37;
-        sColor[3] = 0xFCFF37;
-        sColor[4] = 0xFCFF00;
+        sColor[3] = 0xB9FF37;
+        sColor[4] = 0xFCFF37;
     }
 }
 
