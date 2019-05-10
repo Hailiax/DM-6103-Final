@@ -31,7 +31,7 @@ void ofApp::setup(){
         opposingVelocityConst = -24.0f;
     }
     timeStep = 0.005f;
-    numParticles = 400000; // Turn up as much as possible, 500000 decent, comment in AVX on FastNoiseSIMD.h if possible
+    numParticles = 300000; // Turn up as much as possible, 500000 decent, comment in AVX on FastNoiseSIMD.h if possible
     dancerRadiusSquared = 100*100; // Controlled somewhere else
     frameWidth = 25;
     phase = 1;
@@ -543,7 +543,7 @@ void ofApp::keyPressed(int key){
     // Change colors/thresholds in densityFilter.
     else if (key == 'z'){
         colorChange = ofGetFrameNum();
-        nextThresh[0] = 0.5;
+        nextThresh[0] = 0.3;
         nextThresh[1] = 0.2;
         nextThresh[2] = 0.02;
         nextThresh[3] = 0.00001;

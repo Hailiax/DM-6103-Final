@@ -26,10 +26,6 @@ void main(void){
     vec2 origVel = texture( origVelData, vTexCoord).rg;
     vec2 vel = texture( backbuffer, vTexCoord ).rg;
     float age = texture( ageData, vTexCoord ).r;
-    
-    // Decrease radius if on 3rd phase
-    float dancerRad = dancerRadiusSquared;
-    if (phase == 3) dancerRad /= 9;
         
     // Update the velocity.
     if (age < timestep){
@@ -47,7 +43,7 @@ void main(void){
         if (mouse.x < posX) angle += PI;
         
         // Calculate force based off of distance using dancer radius. Will return negative values if particle is in dancerRad of dancer position
-        float force = 50000/(distX*distX + distY*distY - dancerRad);
+        float force = 50000/(distX*distX + distY*distY - dancerRadiusSquared);
         
         if (phase == 3){
             // Turn off attraction unless within dancer radius, then repel significantly
