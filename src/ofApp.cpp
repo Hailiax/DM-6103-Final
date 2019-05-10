@@ -472,6 +472,45 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+    // Possible Effects
+    /*
+     Phase 1:
+     Dancer flings particles
+     While still, press q for explosion
+     While still, press w for fractal explosion
+     While moving, press q
+     While moving, press w
+     Hold q for continous ring
+     Hold w for continous blob
+     Alternate q and w. Mixin q and w for alternating explosion
+     While still, alternate clicking a and s for mixing gravity
+     While moving, alternate clicking a and s
+     Press f, then d at any time/after any other effect. Dancer can move or not move. This shuts down new attraction
+     Press q/w, then f then d quickly for radiating explosion or delayed return. Better when dancer still
+     Simultanously click sf then ad for massive repulsion
+     Change color between z and x
+     
+     Transition 1-2:
+     Quickly press q, 2, then 1 many times until settles at 2
+     
+     Phase 2:
+     Dancer moves around, dahses on beat
+     Alternate a and s to beat
+     Alternate d and f to shut down fractal
+     Press q or w (same effect in this case) for small pulse
+     Simultanously click sf then ad for bounce then fade
+     Change colors c,v, and so on
+     Invert colors with space
+     Invert colors very quickly to gray out colors
+     
+     Transition 2-3:
+     Press 3
+     
+     Phase 3:
+     Subtle effects when alternating a and s
+     Color changing
+     */
+    
     // Phases
     if (key == '1')
         phase = 1;
