@@ -23,11 +23,15 @@ void ofApp::setup(){
     // Set variables
     beat = 5; // How many "bangs" per minute. Bpm divided by measures/min divided by beats/measure?
     particleSize = 1.5f;
-    particleLife = 15.0f;
-    velocityScaleConst = 0.5f; // Adjust for speed ( 0.45f on live )
-    opposingVelocityConst = -30.0f; // Adjust so effects work properly ( 25.0f on live )
+    particleLife = 10.0f;
+    velocityScaleConst = 0.5f; // Adjust for speed
+    opposingVelocityConst = -30.0f; // Adjust so effects work properly
+    if (production){
+        velocityScaleConst = 0.45f;
+        opposingVelocityConst = -24.0f;
+    }
     timeStep = 0.005f;
-    numParticles = 200000; // Turn up as much as possible, 500000 decent, comment in AVX on FastNoiseSIMD.h if possible
+    numParticles = 250000; // Turn up as much as possible, 500000 decent, comment in AVX on FastNoiseSIMD.h if possible
     dancerRadiusSquared = 100*100; // Controlled somewhere else
     frameWidth = 25;
     phase = 1;
@@ -38,17 +42,24 @@ void ofApp::setup(){
     velocityScale = velocityScaleConst;
     opposingVelocity = opposingVelocityConst/60.0;
     
-    // Set default colors/thresh for densityFilter shader
-    sThresh[0] = 0.9625;
-    sThresh[1] = 0.5;
-    sThresh[2] = 0.1;
-    sThresh[3] = 0.01875;
+    // Setup sockets
+    address = "http://10.18.248.66:3000";
+    isConnected = false;
+    status = "not connected";
+    socketIO.setup(address);
+    ofAddListener(socketIO.notifyEvent, this, &ofApp::gotEvent);
+    ofAddListener(socketIO.connectionEvent, this, &ofApp::onConnection);
     
-    sColor[0] = 0xFFFFFF;
-    sColor[1] = 0xFCECA3;
-    sColor[2] = 0xA13B4F;
-    sColor[3] = 0x181F54;
-    sColor[4] = 0x000000;
+    // Set default colors/thresh for densityFilter shader
+    nextThresh[0] = lastThresh[0] = currentThresh[0] = 0.5;
+    nextThresh[1] = lastThresh[1] = currentThresh[1] = 0.2;
+    nextThresh[2] = lastThresh[2] = currentThresh[2] = 0.02;
+    nextThresh[3] = lastThresh[3] = currentThresh[3] = 0.00001;
+    nextColor[0] = lastColor[0] = currentColor[0] = ofFloatColor::fromHex(0xFFFFFF);
+    nextColor[1] = lastColor[1] = currentColor[1] = ofFloatColor::fromHex(0xFCECA3);
+    nextColor[2] = lastColor[2] = currentColor[2] = ofFloatColor::fromHex(0xA13B4F);
+    nextColor[3] = lastColor[3] = currentColor[3] = ofFloatColor::fromHex(0x181F54);
+    nextColor[4] = lastColor[4] = currentColor[4] = ofFloatColor::fromHex(0x000000);
     
     // Seting the textures where the information ( position and velocity ) will be
     textureRes = (int)sqrt((float)numParticles);
@@ -138,24 +149,15 @@ void ofApp::setup(){
     fractal.allocate(fractalRes, fractalRes, GL_RGB32F);
     fractalGenerator.setup(fractalRes);
     fractalGenerator.startThread();
-    
-    // Setup sockets
-    isConnected = false;
-    address = "http://192.168.1.20:3000";
-    status = "not connected";
-    
-    socketIO.setup(address);
-    
-    ofAddListener(socketIO.notifyEvent, this, &ofApp::gotEvent);
-    
-    ofAddListener(socketIO.connectionEvent, this, &ofApp::onConnection);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     // Use mouse coordinates
-    posX = mouseX;
-    posY = mouseY + height/2;
+    if (!production){
+        posX = mouseX;
+        posY = mouseY + height/2;
+    }
     
     // Create new fractal on different thread
     if (!fractalGenerator.isThreadRunning()){
@@ -276,20 +278,16 @@ void ofApp::update(){
     effectsPingPong.dst->begin();
     ofClear(0);
     densityFilter.begin();
-    densityFilter.setUniformTexture("fractalData", fractal.getTexture(), 1);
-    densityFilter.setUniform1f("frameNum", (float)sin(ofGetFrameNum()));
-    
-    densityFilter.setUniform1f("thresh1", (float)sThresh[0]);
-    densityFilter.setUniform1f("thresh2", (float)sThresh[1]);
-    densityFilter.setUniform1f("thresh3", (float)sThresh[2]);
-    densityFilter.setUniform1f("thresh4", (float)sThresh[3]);
-    
-    densityFilter.setUniform4f("color1", ofFloatColor::fromHex(sColor[0]));
-    densityFilter.setUniform4f("color2", ofFloatColor::fromHex(sColor[1]));
-    densityFilter.setUniform4f("color3", ofFloatColor::fromHex(sColor[2]));
-    densityFilter.setUniform4f("color4", ofFloatColor::fromHex(sColor[3]));
-    densityFilter.setUniform4f("color5", ofFloatColor::fromHex(sColor[4]));
-    
+//    densityFilter.setUniformTexture("fractalData", fractal.getTexture(), 1);
+    densityFilter.setUniform1f("thresh1", (float) currentThresh[0]);
+    densityFilter.setUniform1f("thresh2", (float) currentThresh[1]);
+    densityFilter.setUniform1f("thresh3", (float) currentThresh[2]);
+    densityFilter.setUniform1f("thresh4", (float) currentThresh[3]);
+    densityFilter.setUniform4f("color1", currentColor[0]);
+    densityFilter.setUniform4f("color2", currentColor[1]);
+    densityFilter.setUniform4f("color3", currentColor[2]);
+    densityFilter.setUniform4f("color4", currentColor[3]);
+    densityFilter.setUniform4f("color5", currentColor[4]);
     effectsPingPong.src->draw(0,0);
     densityFilter.end();
     effectsPingPong.dst->end();
@@ -352,9 +350,9 @@ void ofApp::update(){
             effectWindExplode = 0;
         }
     }*/
-    if (effectQuickExplode){
+    if (effectQuickExplode){ //! Shared variable name
         // get frames since effect called
-        unsigned int f = ofGetFrameNum() - effectQuickExplode;
+        unsigned int f = ofGetFrameNum() - effectQuickExplode; //! Shared variable name
         if (f == 0){
             // Eject particles from center by increasing opposing velocity
             opposingVelocity = opposingVelocityConst/2.0;
@@ -362,7 +360,7 @@ void ofApp::update(){
             // Reset opposing velocity
             opposingVelocity = opposingVelocityConst/60.0;
             // Reset effect timer and turn off this effect
-            effectQuickExplode = 0;
+            effectQuickExplode = 0; //! Shared variable name
         }
     }
     if (effectQuickExplodeFractal){
@@ -376,6 +374,26 @@ void ofApp::update(){
             phase1Fractal = false;
             
             effectQuickExplodeFractal = 0;
+        }
+    }
+    if (colorChange){
+        unsigned int f = ofGetFrameNum() - colorChange;
+        if (f < 120){
+            float amt = f/120.f;
+            currentThresh[0] = ofLerp(lastThresh[0], nextThresh[0], amt);
+            currentThresh[1] = ofLerp(lastThresh[1], nextThresh[1], amt);
+            currentThresh[2] = ofLerp(lastThresh[2], nextThresh[2], amt);
+            currentThresh[3] = ofLerp(lastThresh[3], nextThresh[3], amt);
+            currentColor[0] = lastColor[0].lerp(nextColor[0],amt);
+            currentColor[1] = lastColor[1].lerp(nextColor[1],amt);
+            currentColor[2] = lastColor[2].lerp(nextColor[2],amt);
+            currentColor[3] = lastColor[3].lerp(nextColor[3],amt);
+            currentColor[4] = lastColor[4].lerp(nextColor[4],amt);
+        } else{
+            lastThresh = currentThresh = nextThresh;
+            lastColor = currentColor = nextColor;
+            
+            colorChange = 0;
         }
     }
 }
@@ -483,27 +501,71 @@ void ofApp::keyPressed(int key){
         attractToggle = false;
     } // phase 3 play with effects try adding random side velocities or mod y position to multiply x vel
     
-    // Change colors/thresholds in densityFilter. More variation in thresh towards 0
+    // Change colors/thresholds in densityFilter.
     else if (key == 'z'){
-        sThresh[0] = 0.9625;
-        sThresh[1] = 0.5;
-        sThresh[2] = 0.1;
-        sThresh[3] = 0.01875;
-        sColor[0] = 0xFFFFFF;
-        sColor[1] = 0xFCECA3;
-        sColor[2] = 0xA13B4F;
-        sColor[3] = 0x181F54;
-        sColor[4] = 0x000000;
+        colorChange = ofGetFrameNum();
+        nextThresh[0] = 0.5;
+        nextThresh[1] = 0.2;
+        nextThresh[2] = 0.02;
+        nextThresh[3] = 0.00001;
+        nextColor[0] = ofFloatColor::fromHex(0xFFFFFF);
+        nextColor[1] = ofFloatColor::fromHex(0xFCECA3);
+        nextColor[2] = ofFloatColor::fromHex(0xA13B4F);
+        nextColor[3] = ofFloatColor::fromHex(0x181F54);
+        nextColor[4] = ofFloatColor::fromHex(0x000000);
     } else if (key == 'x'){
-        sThresh[0] = 0.4;
-        sThresh[1] = 0.09;
-        sThresh[2] = 0.06;
-        sThresh[3] = 0.01;
-        sColor[0] = 0x0027FF;
-        sColor[1] = 0x37FFF6;
-        sColor[2] = 0x3AFF37;
-        sColor[3] = 0xB9FF37;
-        sColor[4] = 0xFCFF37;
+        colorChange = ofGetFrameNum();
+        nextThresh[0] = 0.15;
+        nextThresh[1] = 0.08;
+        nextThresh[2] = 0.06;
+        nextThresh[3] = 0.01;
+        nextColor[0] = ofFloatColor::fromHex(0x1D201F);
+        nextColor[1] = ofFloatColor::fromHex(0xD1DEDE);
+        nextColor[2] = ofFloatColor::fromHex(0xC58882);
+        nextColor[3] = ofFloatColor::fromHex(0xDF928E);
+        nextColor[4] = ofFloatColor::fromHex(0xEAD2AC);
+    } else if (key == 'c'){
+        colorChange = ofGetFrameNum();
+        nextThresh[0] = 0.15;
+        nextThresh[1] = 0.08;
+        nextThresh[2] = 0.06;
+        nextThresh[3] = 0.01;
+        nextColor[0] = ofFloatColor::fromHex(0xD8DCCE);
+        nextColor[1] = ofFloatColor::fromHex(0xC1CCA7);
+        nextColor[2] = ofFloatColor::fromHex(0xA7E417);
+        nextColor[3] = ofFloatColor::fromHex(0xB7A300);
+        nextColor[4] = ofFloatColor::fromHex(0x905C00);
+    } else if (key == 'v'){
+        colorChange = ofGetFrameNum();
+        nextThresh[0] = 0.15;
+        nextThresh[1] = 0.08;
+        nextThresh[2] = 0.06;
+        nextThresh[3] = 0.01;
+        nextColor[0] = ofFloatColor::fromHex(0xFFFFFF);
+        nextColor[1] = ofFloatColor::fromHex(0x95CCD6);
+        nextColor[2] = ofFloatColor::fromHex(0x1768AC);
+        nextColor[3] = ofFloatColor::fromHex(0x1E2C66);
+        nextColor[4] = ofFloatColor::fromHex(0x13213F);
+    } else if (key == 'b'){
+        colorChange = ofGetFrameNum();
+        nextThresh[0] = 0.15;
+        nextThresh[1] = 0.08;
+        nextThresh[2] = 0.06;
+        nextThresh[3] = 0.01;
+        nextColor[0] = ofFloatColor::fromHex(0xEAE7DB);
+        nextColor[1] = ofFloatColor::fromHex(0xD9D3B2);
+        nextColor[2] = ofFloatColor::fromHex(0xF29418);
+        nextColor[3] = ofFloatColor::fromHex(0xF29418);
+        nextColor[4] = ofFloatColor::fromHex(0x8D0007);
+    } // Transition flip
+    
+    else if (key == ' '){ // Reverses colors
+        colorChange = ofGetFrameNum();
+        nextColor[0] = lastColor[4];
+        nextColor[1] = lastColor[3];
+        nextColor[2] = lastColor[2];
+        nextColor[3] = lastColor[1];
+        nextColor[4] = lastColor[0];
     }
 }
 

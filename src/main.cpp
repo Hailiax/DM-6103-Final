@@ -18,16 +18,16 @@ int main(){
     // Fullscreen or windowed
     if (production) settings.windowMode = OF_FULLSCREEN;
     else settings.setSize(896, 504);
-    
+
     // Settings for window 1
     if (production) settings.monitor = 1;
-    else settings.setPosition(ofVec2f(0,504));
+    else settings.setPosition(ofVec2f(0,0));
     
     shared_ptr<ofAppBaseWindow> mainWindow = ofCreateWindow(settings);
     
     // Settings for window 2
     if (production) settings.monitor = 2;
-    else settings.setPosition(ofVec2f(0,0));
+    else settings.setPosition(ofVec2f(0,504));
     
     settings.shareContextWith = mainWindow;
     shared_ptr<ofAppBaseWindow> secondWindow = ofCreateWindow(settings);
@@ -36,9 +36,10 @@ int main(){
     shared_ptr<ofApp> mainApp(new ofApp);
     shared_ptr<ofSecond> secondApp(new ofSecond);
     secondApp->main = mainApp;
+    mainApp->production = production;
     
     ofSetWindowTitle("DM 6013 Final");
-    ofSetEscapeQuitsApp(false);
+//    ofSetEscapeQuitsApp(false);
     
     ofRunApp(mainWindow, mainApp);
     ofRunApp(secondWindow, secondApp);

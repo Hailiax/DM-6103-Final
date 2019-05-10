@@ -60,10 +60,14 @@ void main(void){
             }
         } else{
             // Increase force for phase 2
-            if (phase == 2) force *= 2;
-            
-            // Max out force at 1
-            if (force > 1) force = 1;
+            if (phase == 2){
+                force *= 2;
+                // Max out force at 4
+                if (force > 4) force = 4;
+            } else{
+                // Max out force at 1
+                if (force > 1) force = 1;
+            }
             
             // Make force inside radius constant
             if (force < 0) {

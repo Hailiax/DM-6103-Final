@@ -131,6 +131,7 @@ public:
     float particleSize;
     float opposingVelocity;
     int phase;
+    bool production;
     bool attractToggle;
     bool phase1Fractal;
     
@@ -138,14 +139,18 @@ public:
     float opposingVelocityConst;
     
     // Colors and thresholds for the densityFilter shader
-    float sThresh[4];
-    uint32 sColor[5];
+    std::array<float,4> currentThresh;
+    std::array<float,4> lastThresh;
+    std::array<float,4> nextThresh;
+    std::array<ofFloatColor,5> currentColor;
+    std::array<ofFloatColor,5> lastColor;
+    std::array<ofFloatColor,5> nextColor;
     
     // Timed effects, stores frame numbers. 0 means effect is not active.
     uint64 effectWindExplode = 0;
     uint64 effectQuickExplode = 0;
     uint64 effectQuickExplodeFractal = 0;
-    uint64 xDistort = 0;
+    uint64 colorChange = 0;
     
     // Shaders
     ofShader updatePos;
