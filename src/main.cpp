@@ -17,7 +17,7 @@ int main(){
     
     // Fullscreen or windowed
     if (production) settings.windowMode = OF_FULLSCREEN;
-    else settings.setSize(896, 504);
+    else settings.setSize(1920, 1080);
 
     // Settings for window 1
     if (production) settings.monitor = 1;

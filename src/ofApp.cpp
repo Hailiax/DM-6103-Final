@@ -31,7 +31,7 @@ void ofApp::setup(){
         opposingVelocityConst = -24.0f;
     }
     timeStep = 0.005f;
-    numParticles = 250000; // Turn up as much as possible, 500000 decent, comment in AVX on FastNoiseSIMD.h if possible
+    numParticles = 400000; // Turn up as much as possible, 500000 decent, comment in AVX on FastNoiseSIMD.h if possible
     dancerRadiusSquared = 100*100; // Controlled somewhere else
     frameWidth = 25;
     phase = 1;
