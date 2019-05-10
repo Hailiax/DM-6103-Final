@@ -63,32 +63,61 @@ void main()
 //        }
 //    }
     // texture(tex0, vTexCoord + vec2(-3.0,  0.0)).r
+    /*
+     float surrounding =
+     0.0006225496 * (
+     texture(tex0, vTexCoord + vec2(-3.0,  0.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 3.0,  0.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 0.0,  3.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 0.0, -3.0)*14).r
+     ) +
+     0.0075376138 * (
+     texture(tex0, vTexCoord + vec2(-2.0,  0.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 2.0,  0.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 0.0,  2.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 0.0, -2.0)*14).r
+     ) +
+     0.0129615686 * (
+     texture(tex0, vTexCoord + vec2(-1.0,  1.0)*14).r +
+     texture(tex0, vTexCoord + vec2(-1.0, -1.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 1.0, -1.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 1.0,  1.0)*14).r
+     ) +
+     0.0854328997 * (
+     texture(tex0, vTexCoord + vec2(-1.0,  0.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 1.0,  0.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 0.0,  1.0)*14).r +
+     texture(tex0, vTexCoord + vec2( 0.0, -1.0)*14).r
+     ) +
+     0.5631093421 *  texture(tex0, vTexCoord + vec2( 0.0,  0.0)*14).r
+     ;
+     */
     float surrounding =
         0.0006225496 * (
-                        texture(tex0, vTexCoord + vec2(-3.0,  0.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 3.0,  0.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 0.0,  3.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 0.0, -3.0)*14).r
+                        texture(tex0, vTexCoord + vec2(-42.0,   0.0)).r +
+                        texture(tex0, vTexCoord + vec2( 42.0,   0.0)).r +
+                        texture(tex0, vTexCoord + vec2(  0.0,  42.0)).r +
+                        texture(tex0, vTexCoord + vec2(  0.0, -42.0)).r
                         ) +
         0.0075376138 * (
-                        texture(tex0, vTexCoord + vec2(-2.0,  0.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 2.0,  0.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 0.0,  2.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 0.0, -2.0)*14).r
+                        texture(tex0, vTexCoord + vec2(-28.0,   0.0)).r +
+                        texture(tex0, vTexCoord + vec2( 28.0,   0.0)).r +
+                        texture(tex0, vTexCoord + vec2(  0.0,  28.0)).r +
+                        texture(tex0, vTexCoord + vec2(  0.0, -28.0)).r
                         ) +
         0.0129615686 * (
-                        texture(tex0, vTexCoord + vec2(-1.0,  1.0)*14).r +
-                        texture(tex0, vTexCoord + vec2(-1.0, -1.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 1.0, -1.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 1.0,  1.0)*14).r
+                        texture(tex0, vTexCoord + vec2(-14.0,   1.0)).r +
+                        texture(tex0, vTexCoord + vec2(-14.0,  -1.0)).r +
+                        texture(tex0, vTexCoord + vec2(  1.0, -14.0)).r +
+                        texture(tex0, vTexCoord + vec2(  1.0,  14.0)).r
                         ) +
         0.0854328997 * (
-                        texture(tex0, vTexCoord + vec2(-1.0,  0.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 1.0,  0.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 0.0,  1.0)*14).r +
-                        texture(tex0, vTexCoord + vec2( 0.0, -1.0)*14).r
+                        texture(tex0, vTexCoord + vec2(-14.0,   0.0)).r +
+                        texture(tex0, vTexCoord + vec2( 14.0,   0.0)).r +
+                        texture(tex0, vTexCoord + vec2(  0.0,  14.0)).r +
+                        texture(tex0, vTexCoord + vec2(  0.0, -14.0)).r
                         ) +
-        0.5631093421 *  texture(tex0, vTexCoord + vec2( 0.0,  0.0)*14).r
+        0.5631093421 *  texture(tex0, vTexCoord + vec2(  0.0,   0.0)).r
     ;
     
     // Map densities to colors using thresholds

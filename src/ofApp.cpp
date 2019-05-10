@@ -543,8 +543,8 @@ void ofApp::keyPressed(int key){
     // Change colors/thresholds in densityFilter.
     else if (key == 'z'){
         colorChange = ofGetFrameNum();
-        nextThresh[0] = 0.3;
-        nextThresh[1] = 0.2;
+        nextThresh[0] = 0.2;
+        nextThresh[1] = 0.1;
         nextThresh[2] = 0.02;
         nextThresh[3] = 0.00001;
         nextColor[0] = ofFloatColor::fromHex(0xFFFFFF);
@@ -554,9 +554,9 @@ void ofApp::keyPressed(int key){
         nextColor[4] = ofFloatColor::fromHex(0x000000);
     } else if (key == 'x'){
         colorChange = ofGetFrameNum();
-        nextThresh[0] = 0.15;
-        nextThresh[1] = 0.08;
-        nextThresh[2] = 0.06;
+        nextThresh[0] = 0.08;
+        nextThresh[1] = 0.06;
+        nextThresh[2] = 0.03;
         nextThresh[3] = 0.01;
         nextColor[0] = ofFloatColor::fromHex(0x1D201F);
         nextColor[1] = ofFloatColor::fromHex(0xD1DEDE);
@@ -566,8 +566,8 @@ void ofApp::keyPressed(int key){
     } else if (key == 'c'){
         colorChange = ofGetFrameNum();
         nextThresh[0] = 0.15;
-        nextThresh[1] = 0.08;
-        nextThresh[2] = 0.06;
+        nextThresh[1] = 0.12;
+        nextThresh[2] = 0.08;
         nextThresh[3] = 0.01;
         nextColor[0] = ofFloatColor::fromHex(0xD8DCCE);
         nextColor[1] = ofFloatColor::fromHex(0xC1CCA7);
@@ -596,7 +596,7 @@ void ofApp::keyPressed(int key){
         nextColor[2] = ofFloatColor::fromHex(0xF29418);
         nextColor[3] = ofFloatColor::fromHex(0xF29418);
         nextColor[4] = ofFloatColor::fromHex(0x8D0007);
-    } // Transition flip
+    }
     
     else if (key == ' '){ // Reverses colors
         colorChange = ofGetFrameNum();
