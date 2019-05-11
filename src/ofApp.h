@@ -130,6 +130,8 @@ public:
     float particleLife;
     float particleSize;
     float opposingVelocity;
+    float windX;
+    float windY;
     int phase;
     bool production;
     bool attractToggle;

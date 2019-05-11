@@ -37,6 +37,8 @@ void ofApp::setup(){
     phase = 1;
     attractToggle = true;
     phase1Fractal = false;
+    windX = 0.0f;
+    windY = 0.0f;
     
     beat = beat*M_PI/360; // Convert for input to SIN()
     velocityScale = velocityScaleConst;
@@ -193,6 +195,7 @@ void ofApp::update(){
     updateVel.setUniformTexture("ageData", agePingPong.src->getTexture(), 3);  // passing the position information
     updateVel.setUniform2f("screen", (float)width, (float)height);
     updateVel.setUniform2f("mouse", (float)posX, (float)posY);
+    updateVel.setUniform2f("wind", (float)windX, (float)windY);
     updateVel.setUniform1f("dancerRadiusSquared", (float)dancerRadiusSquared);
     updateVel.setUniform1f("timestep", (float)timeStep);
     updateVel.setUniform1f("opposingVelocity", (float)opposingVelocity);
@@ -507,104 +510,119 @@ void ofApp::keyPressed(int key){
      Press 3
      
      Phase 3:
-     Subtle effects when alternating a and s
+     Dancing ghosts with w (better) and q
+     Pause disturbances with f and d
+     Change gravity with a and s
      Color changing
      */
     
-    // Phases
-    if (key == '1')
-        phase = 1;
-    else if (key == '2')
-        phase = 2;
-    else if (key == '3')
-        phase = 3;
-    
-    // Effects
-    /*else if (key == 'q')
-        effectWindExplode = ofGetFrameNum();*/
-    else if (key == 'q')
-        effectQuickExplode = ofGetFrameNum();
-    else if (key == 'w')
-        effectQuickExplodeFractal = ofGetFrameNum();
-    
-    // Modifiers
-    else if (key == 'a'){ // Normal attraction
-        phase1Fractal = false;
-        velocityScale = velocityScaleConst;
-    } else if (key == 's'){ // Anti attraction
-        phase1Fractal = true;
-        velocityScale = -velocityScaleConst;
-    } else if (key == 'd'){ // Normal attraction
-        attractToggle = true;
-    } else if (key == 'f'){ // Paused attraction
-        attractToggle = false;
-    } // phase 3 play with effects try adding random side velocities or mod y position to multiply x vel
-    
-    // Change colors/thresholds in densityFilter.
-    else if (key == 'z'){
-        colorChange = ofGetFrameNum();
-        nextThresh[0] = 0.2;
-        nextThresh[1] = 0.1;
-        nextThresh[2] = 0.02;
-        nextThresh[3] = 0.00001;
-        nextColor[0] = ofFloatColor::fromHex(0xFFFFFF);
-        nextColor[1] = ofFloatColor::fromHex(0xFCECA3);
-        nextColor[2] = ofFloatColor::fromHex(0xA13B4F);
-        nextColor[3] = ofFloatColor::fromHex(0x181F54);
-        nextColor[4] = ofFloatColor::fromHex(0x000000);
-    } else if (key == 'x'){
-        colorChange = ofGetFrameNum();
-        nextThresh[0] = 0.08;
-        nextThresh[1] = 0.06;
-        nextThresh[2] = 0.03;
-        nextThresh[3] = 0.01;
-        nextColor[0] = ofFloatColor::fromHex(0x1D201F);
-        nextColor[1] = ofFloatColor::fromHex(0xD1DEDE);
-        nextColor[2] = ofFloatColor::fromHex(0xC58882);
-        nextColor[3] = ofFloatColor::fromHex(0xDF928E);
-        nextColor[4] = ofFloatColor::fromHex(0xEAD2AC);
-    } else if (key == 'c'){
-        colorChange = ofGetFrameNum();
-        nextThresh[0] = 0.15;
-        nextThresh[1] = 0.12;
-        nextThresh[2] = 0.08;
-        nextThresh[3] = 0.01;
-        nextColor[0] = ofFloatColor::fromHex(0xD8DCCE);
-        nextColor[1] = ofFloatColor::fromHex(0xC1CCA7);
-        nextColor[2] = ofFloatColor::fromHex(0xA7E417);
-        nextColor[3] = ofFloatColor::fromHex(0xB7A300);
-        nextColor[4] = ofFloatColor::fromHex(0x905C00);
-    } else if (key == 'v'){
-        colorChange = ofGetFrameNum();
-        nextThresh[0] = 0.15;
-        nextThresh[1] = 0.08;
-        nextThresh[2] = 0.06;
-        nextThresh[3] = 0.01;
-        nextColor[0] = ofFloatColor::fromHex(0xFFFFFF);
-        nextColor[1] = ofFloatColor::fromHex(0x95CCD6);
-        nextColor[2] = ofFloatColor::fromHex(0x1768AC);
-        nextColor[3] = ofFloatColor::fromHex(0x1E2C66);
-        nextColor[4] = ofFloatColor::fromHex(0x13213F);
-    } else if (key == 'b'){
-        colorChange = ofGetFrameNum();
-        nextThresh[0] = 0.15;
-        nextThresh[1] = 0.08;
-        nextThresh[2] = 0.06;
-        nextThresh[3] = 0.01;
-        nextColor[0] = ofFloatColor::fromHex(0xEAE7DB);
-        nextColor[1] = ofFloatColor::fromHex(0xD9D3B2);
-        nextColor[2] = ofFloatColor::fromHex(0xF29418);
-        nextColor[3] = ofFloatColor::fromHex(0xF29418);
-        nextColor[4] = ofFloatColor::fromHex(0x8D0007);
-    }
-    
-    else if (key == ' '){ // Reverses colors
-        colorChange = ofGetFrameNum();
-        nextColor[0] = lastColor[4];
-        nextColor[1] = lastColor[3];
-        nextColor[2] = lastColor[2];
-        nextColor[3] = lastColor[1];
-        nextColor[4] = lastColor[0];
+    switch (key){
+        // Phases
+        case '1':
+            phase = 1;
+            break;
+        case '2':
+            phase = 2;
+            break;
+        case '3':
+            phase = 3;
+            break;
+        // Timed Effects
+        case 'q':
+            effectQuickExplode = ofGetFrameNum();
+            break;
+        case 'w':
+            effectQuickExplodeFractal = ofGetFrameNum();
+            break;
+        // Modifiers
+        case 'a': // Normal attraction
+            phase1Fractal = false;
+            velocityScale = velocityScaleConst;
+            break;
+        case 's': // Anti attraction
+            phase1Fractal = true;
+            velocityScale = -velocityScaleConst;
+            break;
+        case 'd': // Normal attraction
+            attractToggle = true;
+            break;
+        case 'f': // Paused attraction
+            attractToggle = false;
+            break;
+        // Change colors/thresholds in densityFilter.
+        case 'z':
+            colorChange = ofGetFrameNum();
+            nextThresh[0] = 0.2;
+            nextThresh[1] = 0.1;
+            nextThresh[2] = 0.02;
+            nextThresh[3] = 0.00001;
+            nextColor[0] = ofFloatColor::fromHex(0xFFFFFF);
+            nextColor[1] = ofFloatColor::fromHex(0xFCECA3);
+            nextColor[2] = ofFloatColor::fromHex(0xA13B4F);
+            nextColor[3] = ofFloatColor::fromHex(0x181F54);
+            nextColor[4] = ofFloatColor::fromHex(0x000000);
+            break;
+        case 'x':
+            colorChange = ofGetFrameNum();
+            nextThresh[0] = 0.15;
+            nextThresh[1] = 0.12;
+            nextThresh[2] = 0.08;
+            nextThresh[3] = 0.01;
+            nextColor[0] = ofFloatColor::fromHex(0xD8DCCE);
+            nextColor[1] = ofFloatColor::fromHex(0xC1CCA7);
+            nextColor[2] = ofFloatColor::fromHex(0xA7E417);
+            nextColor[3] = ofFloatColor::fromHex(0xB7A300);
+            nextColor[4] = ofFloatColor::fromHex(0x905C00);
+            break;
+        case 'v':
+            colorChange = ofGetFrameNum();
+            nextThresh[0] = 0.15;
+            nextThresh[1] = 0.08;
+            nextThresh[2] = 0.06;
+            nextThresh[3] = 0.01;
+            nextColor[0] = ofFloatColor::fromHex(0xFFFFFF);
+            nextColor[1] = ofFloatColor::fromHex(0x95CCD6);
+            nextColor[2] = ofFloatColor::fromHex(0x1768AC);
+            nextColor[3] = ofFloatColor::fromHex(0x1E2C66);
+            nextColor[4] = ofFloatColor::fromHex(0x13213F);
+            break;
+        case 'b':
+            colorChange = ofGetFrameNum();
+            nextThresh[0] = 0.15;
+            nextThresh[1] = 0.08;
+            nextThresh[2] = 0.06;
+            nextThresh[3] = 0.01;
+            nextColor[0] = ofFloatColor::fromHex(0xEAE7DB);
+            nextColor[1] = ofFloatColor::fromHex(0xD9D3B2);
+            nextColor[2] = ofFloatColor::fromHex(0xF29418);
+            nextColor[3] = ofFloatColor::fromHex(0xF29418);
+            nextColor[4] = ofFloatColor::fromHex(0x8D0007);
+            break;
+        case ' ': // Invert colors
+            colorChange = ofGetFrameNum();
+            nextColor[0] = lastColor[4];
+            nextColor[1] = lastColor[3];
+            nextColor[2] = lastColor[2];
+            nextColor[3] = lastColor[1];
+            nextColor[4] = lastColor[0];
+            break;
+        // Wind, uses arrow keys
+        case 57356:
+            windX += -0.2f;
+            cout << "wind: " << windX << ", " << windY << endl;
+            break;
+        case 57358:
+            windX += 0.2f;
+            cout << "wind: " << windX << ", " << windY << endl;
+            break;
+        case 57357:
+            windY += -0.2f;
+            cout << "wind: " << windX << ", " << windY << endl;
+            break;
+        case 57359:
+            windY += 0.2f;
+            cout << "wind: " << windX << ", " << windY << endl;
+            break;
     }
 }
 

@@ -12,6 +12,7 @@ uniform float dancerRadiusSquared;
 uniform float opposingVelocity;
 uniform vec2 screen;
 uniform vec2 mouse;
+uniform vec2 wind;
 
 in vec2 vTexCoord;
 
@@ -80,9 +81,9 @@ void main(void){
             vel.y += sin(angle)*force;
         }
         
-        // Air resistance
-        vel -= vel * 0.01;
-        
+        // Air physics
+        vel -= vel * 0.01; // resistance
+        vel += wind;
     }
     
     // Then save the vel data into the velocity FBO.

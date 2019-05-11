@@ -32,17 +32,21 @@ int main(){
     settings.shareContextWith = mainWindow;
     shared_ptr<ofAppBaseWindow> secondWindow = ofCreateWindow(settings);
     
-    // Finish
+    // Finish graphics windows
     shared_ptr<ofApp> mainApp(new ofApp);
     shared_ptr<ofSecond> secondApp(new ofSecond);
     secondApp->main = mainApp;
     mainApp->production = production;
     
     ofSetWindowTitle("DM 6013 Final");
-//    ofSetEscapeQuitsApp(false);
+    ofSetEscapeQuitsApp(false);
     
     ofRunApp(mainWindow, mainApp);
     ofRunApp(secondWindow, secondApp);
+    
+    
+    
+    // Run!
     ofRunMainLoop();
     
 }
