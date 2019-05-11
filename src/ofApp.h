@@ -143,6 +143,8 @@ public:
     float velocityScaleConst;
     float opposingVelocityConst;
     
+    ofTrueTypeFont font;
+    
     // Colors and thresholds for the densityFilter shader
     std::array<float,4> currentThresh;
     std::array<float,4> lastThresh;
