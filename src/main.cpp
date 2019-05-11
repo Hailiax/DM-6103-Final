@@ -3,12 +3,32 @@
 #include "ofApp.h"
 #include "ofDisplay.h"
 
-// DM 6013 Project Lost Graphics Program created by Alexander Wing
+// DM 6013 Project "Lost" Graphics Program created by Alexander Wing
 // Copyright 2019
+
+// Note: This program requires the addon ofxSocketIO
+//
+// This program uses FastNoiseSIMD which requires you to set specific compiler settings
+// Find these settings at https://github.com/Auburns/FastNoiseSIMD/wiki/Compiler-Settings (In my experience, this doc contains incomplete compiler settings)
+//
+// For Xcode, I use: compiler setting -std=c++11 and -mfma, and the following for individual files:
+// FastNoiseSIMD_sse2.cpp: -msse2
+// FastNoiseSIMD_sse41.cpp: -msse4.1
+// FastNoiseSIMD_avx2.cpp: -mavx2
+// FastNoiseSIMD_avx512.cpp: -mavx512f
+//
+// Your compiler/chip may not support some SIMD features and will cause this program to fail
+// To fix, go to src>FastNoiseSIMD>FastNoiseSIMD.h and comment out any offending lines
+
+// This program does all the graphics calculation on ofApp.
+// ofApp can display the graphics as well or...
+// ofApp can display a GUI and one or more ofDisplay can display the graphics (good for multi screen setups)
+// This program can also receive mocap positions. It is currently configured for kinect and receives the data over sockets
+// To add your own mocap functionality, make sure "useServerPosition" is set to true and edit "onServerEvent()" at the bottom of ofApp.cpp
 
 int main(){
     
-    // Build settings (more graphics related settings can be found at the top of ofApp.cpp
+    // Build settings (more graphics related settings can be found at the top of ofApp.cpp)
     bool fullscreen = false;
     int windows = 0; // Number of auxillary drawing windows. If this is set to 0, a GUI will not be drawn and graphics will be drawn on one window.
     int width = 1024; // Height/width for non fullscreen. If fullscreen, determines GUI height/width

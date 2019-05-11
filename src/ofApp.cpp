@@ -2,18 +2,6 @@
 
 //--------------------------------------------------------------
 
-//
-// Note: there are computer specific settings for: OpenGL 3, SIMD 4.1, and Apple Clang
-// Ensure to use at least these compiler settings for FastNoise: https://github.com/Auburns/FastNoiseSIMD/wiki/Compiler-Settings
-// For Xcode: Use compiler setting -std=c++11 and -mfma, and the following for individual files:
-// FastNoiseSIMD_sse2.cpp: -msse2
-// FastNoiseSIMD_sse41.cpp: -msse4.1
-// FastNoiseSIMD_avx2.cpp: -mavx2
-// FastNoiseSIMD_avx512.cpp: -mavx512f
-//
-// XY positions [0,1] are received from kinect/software via websockets on a local server
-//
-
 void ofApp::setup(){
     
     // Set variables
