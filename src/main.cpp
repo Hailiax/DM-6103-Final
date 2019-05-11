@@ -10,15 +10,15 @@ int main(){
     
     // Build settings (more graphics related settings can be found at the top of ofApp.cpp
     bool fullscreen = false;
-    int height = 1080; // Height/width for non fullscreen. If fullscreen, determines GUI height/width
-    int width = 1920;
-    int windows = 2; // Number of auxillary drawing windows. If this is set to 0, a GUI will not be drawn and graphics will be drawn on one window.
+    int windows = 0; // Number of auxillary drawing windows. If this is set to 0, a GUI will not be drawn and graphics will be drawn on one window.
+    int width = 1024; // Height/width for non fullscreen. If fullscreen, determines GUI height/width
+    int height = 768;
     
     float beat = 5.0; // How many "bangs" per minute. Bpm divided by measures/min divided by beats/measure?
     int particleCount = 300000; // Turn up as much as possible. Harder on the GPU
     float velocityScale = 0.5f; // Adjust per computer for speed
     float opposingVelocity = -30.0f; // Adjust per computer so effects work properly
-    if (fullscreen){ // Delete this outside of use for class
+    if (fullscreen){ // Delete this outside of use for my college class
         velocityScale = 0.45f;
         opposingVelocity = -24.0f;
     }
