@@ -15,42 +15,28 @@
 //
 
 void ofApp::setup(){
-    // Width and Heigth of the windows
-    width = ofGetWindowWidth();
-    height = ofGetWindowHeight()*2;
-    frameMesh.setUsage(GL_DYNAMIC_DRAW);
     
     // Set variables
-    beat = 5; // How many "bangs" per minute. Bpm divided by measures/min divided by beats/measure?
     particleSize = 1.5f;
     particleLife = 10.0f;
-    velocityScaleConst = 0.5f; // Adjust for speed
-    opposingVelocityConst = -30.0f; // Adjust so effects work properly
-    if (production){
-        velocityScaleConst = 0.45f;
-        opposingVelocityConst = -24.0f;
-    }
     timeStep = 0.005f;
-    numParticles = 300000; // Turn up as much as possible, 500000 decent, comment in AVX on FastNoiseSIMD.h if possible
-    dancerRadiusSquared = 100*100; // Controlled somewhere else
-    frameWidth = 25;
+    dancerRadius = 40.0;
+    frameWidth = 20;
     phase = 1;
     attractToggle = true;
     phase1Fractal = false;
     windX = 0.0f;
     windY = 0.0f;
     
-    beat = beat*M_PI/360; // Convert for input to SIN()
+    // Adjust variables
+    dancerRadiusSquared = dancerRadius*dancerRadius;
+    beat = beat*M_PI/360; // Convert beat for input to sin()
     velocityScale = velocityScaleConst;
     opposingVelocity = opposingVelocityConst/60.0;
-    
-    // Setup sockets
-    address = "http://10.18.248.66:3000";
-    isConnected = false;
-    status = "not connected";
-    socketIO.setup(address);
-    ofAddListener(socketIO.notifyEvent, this, &ofApp::gotEvent);
-    ofAddListener(socketIO.connectionEvent, this, &ofApp::onConnection);
+    if (FBOheight == windowHeight){
+        windowWidth = FBOwidth = ofGetWindowWidth();
+        windowHeight = FBOheight = ofGetWindowHeight();
+    }
     
     // Set default colors/thresh for densityFilter shader
     nextThresh[0] = lastThresh[0] = currentThresh[0] = 0.5;
@@ -62,6 +48,13 @@ void ofApp::setup(){
     nextColor[2] = lastColor[2] = currentColor[2] = ofFloatColor::fromHex(0xA13B4F);
     nextColor[3] = lastColor[3] = currentColor[3] = ofFloatColor::fromHex(0x181F54);
     nextColor[4] = lastColor[4] = currentColor[4] = ofFloatColor::fromHex(0x000000);
+    
+    // Setup sockets
+    isConnected = false;
+    status = "not connected";
+    socketIO.setup(address);
+    ofAddListener(socketIO.notifyEvent, this, &ofApp::gotEvent);
+    ofAddListener(socketIO.connectionEvent, this, &ofApp::onConnection);
     
     // Seting the textures where the information ( position and velocity ) will be
     textureRes = (int)sqrt((float)numParticles);
@@ -128,7 +121,7 @@ void ofApp::setup(){
     particleImg.load("dot.png");
     
     // Allocate the particle renderer
-    renderFBO.allocate(width, height, GL_RGB32F);
+    renderFBO.allocate(FBOwidth, FBOheight, GL_RGB32F);
     renderFBO.begin();
     ofClear(0, 0, 0, 255);
     renderFBO.end();
@@ -142,23 +135,26 @@ void ofApp::setup(){
     }
     
     // Allocate some effects
-    effectsPingPong.allocate(width, height, GL_RGB32F);
-    glowAddFBO.allocate(width, height, GL_RGB32F);
+    effectsPingPong.allocate(FBOwidth, FBOheight, GL_RGB32F);
+    glowAddFBO.allocate(FBOwidth, FBOheight, GL_RGB32F);
     
     // Create fractal noise map array, values are [-1, 1]
-    fractalRes = width;
-    if (height > width) fractalRes = height;
+    fractalRes = FBOwidth;
+    if (FBOheight > FBOwidth) fractalRes = FBOheight;
     fractal.allocate(fractalRes, fractalRes, GL_RGB32F);
     fractalGenerator.setup(fractalRes);
     fractalGenerator.startThread();
+    
+    // Preapre border frame mesh
+    frameMesh.setUsage(GL_DYNAMIC_DRAW);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     // Use mouse coordinates
-    if (!production){
+    if (!useServerPosition){
         posX = mouseX;
-        posY = mouseY + height/2;
+        posY = mouseY + FBOheight - windowHeight;
     }
     
     // Create new fractal on different thread
@@ -167,6 +163,67 @@ void ofApp::update(){
         fractalGenerator.frame = ofGetFrameNum();
         fractalGenerator.startThread();
     }
+    
+    ///////
+    // Live effects
+    ///////
+    
+    // Oscillate frame
+    float beatMult = pow( sin(ofGetFrameNum()*beat), 2);
+    dancerRadiusSquared = beatMult*dancerRadius/2 + dancerRadius;
+    dancerRadiusSquared *= dancerRadiusSquared;
+    frameWidthScaled = beatMult*frameWidth/2 + frameWidth;
+    
+    if (effectQuickExplode){ //! Shared variable name
+        // get frames since effect called
+        unsigned int f = ofGetFrameNum() - effectQuickExplode; //! Shared variable name
+        if (f == 0){
+            // Eject particles from center by increasing opposing velocity
+            opposingVelocity = opposingVelocityConst/2.0;
+        } else if (f == 5){
+            // Reset opposing velocity
+            opposingVelocity = opposingVelocityConst/60.0;
+            // Reset effect timer and turn off this effect
+            effectQuickExplode = 0; //! Shared variable name
+        }
+    }
+    if (effectQuickExplodeFractal){
+        unsigned int f = ofGetFrameNum() - effectQuickExplodeFractal;
+        if (f == 0){
+            phase1Fractal = true;
+            opposingVelocity = opposingVelocityConst/2.0;
+        } else if (f == 5){
+            opposingVelocity = opposingVelocityConst/60.0;
+        } else if (f == 10){
+            phase1Fractal = false;
+            
+            effectQuickExplodeFractal = 0;
+        }
+    }
+    if (colorChange){
+        unsigned int f = ofGetFrameNum() - colorChange;
+        if (f < 120){
+            float amt = f/120.f;
+            currentThresh[0] = ofLerp(lastThresh[0], nextThresh[0], amt);
+            currentThresh[1] = ofLerp(lastThresh[1], nextThresh[1], amt);
+            currentThresh[2] = ofLerp(lastThresh[2], nextThresh[2], amt);
+            currentThresh[3] = ofLerp(lastThresh[3], nextThresh[3], amt);
+            currentColor[0] = lastColor[0].lerp(nextColor[0],amt);
+            currentColor[1] = lastColor[1].lerp(nextColor[1],amt);
+            currentColor[2] = lastColor[2].lerp(nextColor[2],amt);
+            currentColor[3] = lastColor[3].lerp(nextColor[3],amt);
+            currentColor[4] = lastColor[4].lerp(nextColor[4],amt);
+        } else{
+            lastThresh = currentThresh = nextThresh;
+            lastColor = currentColor = nextColor;
+            
+            colorChange = 0;
+        }
+    }
+    
+    ///////
+    // Calculate particles
+    ///////
     
     // Update ages
     agePingPong.dst->begin();
@@ -193,7 +250,7 @@ void ofApp::update(){
     updateVel.setUniformTexture("origVelData", origVel.getTexture(), 1);  // passing the position information
     updateVel.setUniformTexture("posData", posPingPong.src->getTexture(), 2);  // passing the position information
     updateVel.setUniformTexture("ageData", agePingPong.src->getTexture(), 3);  // passing the position information
-    updateVel.setUniform2f("screen", (float)width, (float)height);
+    updateVel.setUniform2f("screen", (float)FBOwidth, (float)FBOheight);
     updateVel.setUniform2f("mouse", (float)posX, (float)posY);
     updateVel.setUniform2f("wind", (float)windX, (float)windY);
     updateVel.setUniform1f("dancerRadiusSquared", (float)dancerRadiusSquared);
@@ -219,7 +276,7 @@ void ofApp::update(){
     updatePos.setUniformTexture("velData", velPingPong.src->getTexture(), 2);  // Velocity
     updatePos.setUniformTexture("ageData", agePingPong.src->getTexture(), 3);  // Age
     updatePos.setUniformTexture("fractalData", fractal.getTexture(), 4);  // Fractal
-    updatePos.setUniform2f("screen", (float)width, (float)height);
+    updatePos.setUniform2f("screen", (float)FBOwidth, (float)FBOheight);
     updatePos.setUniform1f("timestep", (float) timeStep);
     updatePos.setUniform1f("velocityScale", (float)velocityScale);
     updatePos.setUniform1i("phase", (int)phase);
@@ -233,7 +290,7 @@ void ofApp::update(){
     posPingPong.swap();
     
     
-    // Rendering
+    // Rendering particles
     //
     // 1.   Sending this vertex to the Vertex Shader.
     //      Each one it's draw exactly on the position that match where it's stored on both vel and pos textures
@@ -248,7 +305,7 @@ void ofApp::update(){
     updateRender.setUniformTexture("posTex", posPingPong.dst->getTexture(), 0);
     updateRender.setUniformTexture("imgTex", particleImg.getTexture() , 1);
     updateRender.setUniform1i("resolution", (float)textureRes);
-    updateRender.setUniform2f("screen", (float)width, (float)height);
+    updateRender.setUniform2f("screen", (float)FBOwidth, (float)FBOheight);
     updateRender.setUniform1f("particleSize", (float)particleSize);
     updateRender.setUniform1f("imgWidth", (float)particleImg.getWidth());
     updateRender.setUniform1f("imgHeight", (float)particleImg.getHeight());
@@ -328,149 +385,83 @@ void ofApp::update(){
 //    effectsPingPong.dst->end();
 //    effectsPingPong.swap();
     
-    
-    
     ///////
-    // Live effects
+    // Update border frame
     ///////
     
-    // Oscillate frame
-    float beatMult = pow( sin(ofGetFrameNum()*beat), 2);
-    dancerRadiusSquared = beatMult*40 + 20;
-    dancerRadiusSquared *= dancerRadiusSquared;
-    frameWidth = beatMult*10 + 20;
+    frameMesh.clear();
+    frameMesh.setMode(OF_PRIMITIVE_TRIANGLES);
     
-    // Timed effects
-    /*if (effectWindExplode){
-        unsigned int f = ofGetFrameNum() - effectWindExplode;
-        if (f == 0){
-            phase = 2;
-            opposingVelocity = opposingVelocityConst;
-        } else if (f == 45){
-            phase = 1;
-            opposingVelocity = opposingVelocityConst/60;
-            
-            effectWindExplode = 0;
-        }
-    }*/
-    if (effectQuickExplode){ //! Shared variable name
-        // get frames since effect called
-        unsigned int f = ofGetFrameNum() - effectQuickExplode; //! Shared variable name
-        if (f == 0){
-            // Eject particles from center by increasing opposing velocity
-            opposingVelocity = opposingVelocityConst/2.0;
-        } else if (f == 5){
-            // Reset opposing velocity
-            opposingVelocity = opposingVelocityConst/60.0;
-            // Reset effect timer and turn off this effect
-            effectQuickExplode = 0; //! Shared variable name
-        }
-    }
-    if (effectQuickExplodeFractal){
-        unsigned int f = ofGetFrameNum() - effectQuickExplodeFractal;
-        if (f == 0){
-            phase1Fractal = true;
-            opposingVelocity = opposingVelocityConst/2.0;
-        } else if (f == 5){
-            opposingVelocity = opposingVelocityConst/60.0;
-        } else if (f == 10){
-            phase1Fractal = false;
-            
-            effectQuickExplodeFractal = 0;
-        }
-    }
-    if (colorChange){
-        unsigned int f = ofGetFrameNum() - colorChange;
-        if (f < 120){
-            float amt = f/120.f;
-            currentThresh[0] = ofLerp(lastThresh[0], nextThresh[0], amt);
-            currentThresh[1] = ofLerp(lastThresh[1], nextThresh[1], amt);
-            currentThresh[2] = ofLerp(lastThresh[2], nextThresh[2], amt);
-            currentThresh[3] = ofLerp(lastThresh[3], nextThresh[3], amt);
-            currentColor[0] = lastColor[0].lerp(nextColor[0],amt);
-            currentColor[1] = lastColor[1].lerp(nextColor[1],amt);
-            currentColor[2] = lastColor[2].lerp(nextColor[2],amt);
-            currentColor[3] = lastColor[3].lerp(nextColor[3],amt);
-            currentColor[4] = lastColor[4].lerp(nextColor[4],amt);
-        } else{
-            lastThresh = currentThresh = nextThresh;
-            lastColor = currentColor = nextColor;
-            
-            colorChange = 0;
-        }
-    }
+    frameMesh.addVertex(ofVec3f(0, 0, 0));
+    frameMesh.addVertex(ofVec3f(windowWidth, 0, 0));
+    frameMesh.addVertex(ofVec3f(windowWidth, windowHeight, 0));
+    frameMesh.addVertex(ofVec3f(0, windowHeight, 0));
+    
+    frameMesh.addVertex(ofVec3f(frameWidthScaled, frameWidthScaled, 0));
+    frameMesh.addVertex(ofVec3f(windowWidth-frameWidthScaled, frameWidthScaled, 0));
+    frameMesh.addVertex(ofVec3f(windowWidth-frameWidthScaled, windowHeight-frameWidthScaled, 0));
+    frameMesh.addVertex(ofVec3f(frameWidthScaled, windowHeight-frameWidthScaled, 0));
+    
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    
+    frameMesh.addIndex(0);
+    frameMesh.addIndex(1);
+    frameMesh.addIndex(4);
+    
+    frameMesh.addIndex(4);
+    frameMesh.addIndex(1);
+    frameMesh.addIndex(5);
+    
+    frameMesh.addIndex(1);
+    frameMesh.addIndex(2);
+    frameMesh.addIndex(5);
+    
+    frameMesh.addIndex(5);
+    frameMesh.addIndex(2);
+    frameMesh.addIndex(6);
+    
+    frameMesh.addIndex(2);
+    frameMesh.addIndex(3);
+    frameMesh.addIndex(6);
+    
+    frameMesh.addIndex(6);
+    frameMesh.addIndex(3);
+    frameMesh.addIndex(7);
+    
+    frameMesh.addIndex(3);
+    frameMesh.addIndex(0);
+    frameMesh.addIndex(7);
+    
+    frameMesh.addIndex(7);
+    frameMesh.addIndex(0);
+    frameMesh.addIndex(4);
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(0);
     
-    // Draw 1st half of image
-    effectsPingPong.src->getTexture().drawSubsection(0,0,width,height/2,0,height/2);
+    if (FBOheight == windowHeight){ // No multiscreen -> draw on this window and no GUI
+        
+        effectsPingPong.src->draw(0,0);
+        frameMesh.draw();
+        
+    } else{ // Draw GUI, leave drawing to ofDisplays
     
-    // Draw frame
-    int fWidth = ofGetWindowWidth();
-    int fHeight = ofGetWindowHeight();
-    frameMesh.clear();
-    frameMesh.setMode(OF_PRIMITIVE_TRIANGLES);
-    
-    frameMesh.addVertex(ofVec3f(0, 0, 0));
-    frameMesh.addVertex(ofVec3f(fWidth, 0, 0));
-    frameMesh.addVertex(ofVec3f(fWidth, fHeight, 0));
-    frameMesh.addVertex(ofVec3f(0, fHeight, 0));
-    
-    frameMesh.addVertex(ofVec3f(frameWidth, frameWidth, 0));
-    frameMesh.addVertex(ofVec3f(fWidth-frameWidth, frameWidth, 0));
-    frameMesh.addVertex(ofVec3f(fWidth-frameWidth, fHeight-frameWidth, 0));
-    frameMesh.addVertex(ofVec3f(frameWidth, fHeight-frameWidth, 0));
-    
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    
-    frameMesh.addIndex(0);
-    frameMesh.addIndex(1);
-    frameMesh.addIndex(4);
-    
-    frameMesh.addIndex(4);
-    frameMesh.addIndex(1);
-    frameMesh.addIndex(5);
-    
-    frameMesh.addIndex(1);
-    frameMesh.addIndex(2);
-    frameMesh.addIndex(5);
-    
-    frameMesh.addIndex(5);
-    frameMesh.addIndex(2);
-    frameMesh.addIndex(6);
-    
-    frameMesh.addIndex(2);
-    frameMesh.addIndex(3);
-    frameMesh.addIndex(6);
-    
-    frameMesh.addIndex(6);
-    frameMesh.addIndex(3);
-    frameMesh.addIndex(7);
-    
-    frameMesh.addIndex(3);
-    frameMesh.addIndex(0);
-    frameMesh.addIndex(7);
-    
-    frameMesh.addIndex(7);
-    frameMesh.addIndex(0);
-    frameMesh.addIndex(4);
-    
-    frameMesh.draw();
-    
-    // log status of sockets
-//    cout << ofApp::status << endl;
-    
-    // Second half is drawn in ofSecond
+        // log status of sockets
+        ofDrawBitmapString( "Websockets status: " + status, 10, 15 );
+        
+        // Log wind
+        ofDrawBitmapString( "Wind (x, y): (" + std::to_string(windX) + ", " + std::to_string(-windY) + ")", 10, 30 );
+        
+    }
 }
 
 //--------------------------------------------------------------
@@ -478,6 +469,7 @@ void ofApp::keyPressed(int key){
     // Possible Effects
     /*
      Phase 1:
+     !! Winds w/ arrow keys can influence all these effects. Dont forget diagonal winds
      Dancer flings particles
      While still, press q for explosion
      While still, press w for fractal explosion
@@ -510,6 +502,7 @@ void ofApp::keyPressed(int key){
      Press 3
      
      Phase 3:
+     Wind with arrow keys are effective here
      Dancing ghosts with w (better) and q
      Pause disturbances with f and d
      Change gravity with a and s
@@ -609,19 +602,15 @@ void ofApp::keyPressed(int key){
         // Wind, uses arrow keys
         case 57356:
             windX += -0.2f;
-            cout << "wind: " << windX << ", " << windY << endl;
             break;
         case 57358:
             windX += 0.2f;
-            cout << "wind: " << windX << ", " << windY << endl;
             break;
         case 57357:
             windY += -0.2f;
-            cout << "wind: " << windX << ", " << windY << endl;
             break;
         case 57359:
             windY += 0.2f;
-            cout << "wind: " << windX << ", " << windY << endl;
             break;
     }
 }
@@ -695,6 +684,6 @@ void ofApp::gotEvent(string& name) {
 
 //--------------------------------------------------------------
 void ofApp::onServerEvent (ofxSocketIOData& data) {
-    posX = data.getFloatValue("x")*width;
-    posY = (data.getFloatValue("y") + 1)*height/2;
+    posX = data.getFloatValue("x")*windowWidth;
+    posY = data.getFloatValue("y")*windowHeight + FBOheight - windowHeight;
 }

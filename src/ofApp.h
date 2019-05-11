@@ -117,13 +117,16 @@ public:
     fractalGenerationThread fractalGenerator;
     
     // Basic variables
-    int width, height;
+    int FBOwidth, FBOheight;
+    int windowWidth, windowHeight;
     int posX, posY;
     int numParticles;
     int textureRes;
     int fractalRes;
     int frameWidth;
+    int frameWidthScaled;
     float beat;
+    float dancerRadius;
     float dancerRadiusSquared;
     float timeStep;
     float velocityScale;
@@ -133,7 +136,7 @@ public:
     float windX;
     float windY;
     int phase;
-    bool production;
+    bool useServerPosition;
     bool attractToggle;
     bool phase1Fractal;
     

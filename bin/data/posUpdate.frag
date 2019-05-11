@@ -39,9 +39,10 @@ void main(void){
             
             // Dampen effect of fractal on parts of phase 1
             if (phase1Fractal == 1 && phase == 1){
-                fractal += 1;
+                fractal += 2;
                 fractal *= 0.5;
-                fractal += 0.5;
+            } else if (phase == 3){
+                fractal += 0.2;
             }
             
         }
