@@ -17,8 +17,8 @@
 // FastNoiseSIMD_avx2.cpp: -mavx2
 // FastNoiseSIMD_avx512.cpp: -mavx512f
 //
-// Your compiler/chip may not support some SIMD features and will cause this program to fail
-// To fix, go to src>FastNoiseSIMD>FastNoiseSIMD.h and comment out any offending lines
+// Your compiler/chip may not support some SIMD features and may cause this program to fail
+// To fix, go to src > FastNoiseSIMD > FastNoiseSIMD.h and comment out any offending lines
 
 // This program does all the graphics calculation on ofApp.
 // ofApp can display the graphics as well or...
