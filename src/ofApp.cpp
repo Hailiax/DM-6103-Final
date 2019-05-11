@@ -612,7 +612,7 @@ void ofApp::keyPressed(int key){
             nextThresh[0] = 0.15;
             nextThresh[1] = 0.08;
             nextThresh[2] = 0.06;
-            nextThresh[3] = 0.01;
+            nextThresh[3] = 0.00001;
             nextColor[0] = ofFloatColor::fromHex(0xFFFFFF);
             nextColor[1] = ofFloatColor::fromHex(0x95CCD6);
             nextColor[2] = ofFloatColor::fromHex(0x1768AC);
