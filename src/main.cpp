@@ -36,6 +36,8 @@ int main(){
     
     float beat = 5.0; // How many "bangs" per minute. Bpm divided by measures/min divided by beats/measure?
     int particleCount = 300000; // Turn up as much as possible. Harder on the GPU
+    float attractorRadius = 35.0;
+    int frameWidth = 20;
     float velocityScale = 0.5f; // Adjust per computer for speed
     float opposingVelocity = -30.0f; // Adjust per computer so effects work properly
     if (fullscreen){ // Delete this outside of use for my college class
@@ -118,6 +120,8 @@ int main(){
     mainApp->opposingVelocityConst = opposingVelocity;
     mainApp->numParticles = particleCount;
     mainApp->address = IPAddress;
+    mainApp->dancerRadius = attractorRadius;
+    mainApp->frameWidth = frameWidth;
     
     
     ///////

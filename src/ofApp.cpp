@@ -8,8 +8,6 @@ void ofApp::setup(){
     particleSize = 1.5f;
     particleLife = 10.0f;
     timeStep = 0.005f;
-    dancerRadius = 40.0;
-    frameWidth = 20;
     phase = 1;
     attractToggle = true;
     phase1Fractal = false;
