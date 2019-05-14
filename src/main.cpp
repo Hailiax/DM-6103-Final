@@ -3,7 +3,7 @@
 #include "ofApp.h"
 #include "ofDisplay.h"
 
-// DM 6013 Project "Lost" Graphics Program created by Alexander Wing
+// "Lost" Graphics Program
 // Copyright 2019
 
 // Note: This program requires the addon ofxSocketIO
