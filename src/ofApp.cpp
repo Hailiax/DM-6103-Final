@@ -441,7 +441,7 @@ void ofApp::draw(){
         
         effectsPingPong.src->draw(0,0);
         glPointSize(10.f);
-        frameMesh.draw();
+//        frameMesh.draw();
         
     } else{ // Draw GUI, leave drawing to ofDisplays
         
