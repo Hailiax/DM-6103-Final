@@ -176,14 +176,17 @@ void ofApp::setup(){
     frameMesh.addIndex(0);
     frameMesh.addIndex(4);
     
-    // Load font
+    // Load stuff
     font.load("NotoMono-Regular.ttf", 10);
-    
     music.load("lost-in-space-and-time.mp3");
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    
+    ///////
+    // Sound
+    ///////
     
     ofSoundUpdate();
     
@@ -201,17 +204,15 @@ void ofApp::update(){
     
     if(phase == 1){
         if(amp > 0.028){
-            effectQuickExplode = ofGetFrameNum();
+            keyPressed('q');
         }
     }
     
     if(phase == 2){
         if(amp > 0.028){
-            phase1Fractal = true;
-            velocityScale = -velocityScaleConst;
+            keyPressed('s');
         }else{
-            phase1Fractal = false;
-            velocityScale = velocityScaleConst;
+            keyPressed('a');
         }
     }
     
@@ -224,6 +225,10 @@ void ofApp::update(){
     if(music.getPosition() > 0.690){
         phase = 3;
     }
+    
+    ///////
+    // Setup
+    ///////
     
     // Use mouse coordinates
     if (!useServerPosition){
@@ -501,7 +506,7 @@ void ofApp::draw(){
         font.drawString( "Wind (x, y): (" + std::to_string(windX) + ", " + std::to_string(-windY) + ")", 10, 30 );
         
         // List active keys
-        font.drawString( "Active Keys:\n\nPhases:\n1: Phase 1\n2: Phase 2\n3: Phase 3\n\nEvents:\nq: Clean explode\nw: Fractal explode\n\nModifiers:\na: Normal attraction\ns: Anti attraction\nd: Normal attraction\nf: Paused attraction\n\nColors:\nz:\nx:\nc:\nv:\nb:\n\nspace: Invert colors\narrow keys: Increment wind\nescape: Quit", 10, 75);
+        font.drawString( "Active Keys:\n\nPhases:\n`: Start music\n1: Phase 1\n2: Phase 2\n3: Phase 3\n\nEvents:\nq: Clean explode\nw: Fractal explode\n\nModifiers:\na: Normal attraction\ns: Anti attraction\nd: Normal attraction\nf: Paused attraction\n\nColors:\nz:\nx:\nc:\nv:\nb:\n\nspace: Invert colors\narrow keys: Increment wind\nescape: Quit", 10, 75);
         
         // List possible effects
         font.drawString( "Possible Effects:\n\nPhase 1:\n!! Winds w/ arrow keys can influence all these effects. Dont forget diagonal winds\nDancer flings particles\nWhile still, press q for explosion\nWhile still, press w for fractal explosion\nWhile moving, press q\nWhile moving, press w\nHold q for continous ring\nHold w for continous blob\nAlternate q and w. Mixin q and w for alternating explosion\nWhile still, alternate clicking a and s for mixing gravity\nWhile moving, alternate clicking a and s\nMulti press q while wind\nPress f, then d at any time/after any other effect. Dancer can move or not move. This shuts down new attraction\nPress q/w, then f then d quickly for radiating explosion or delayed return. Better when dancer still\nSimultanously click sf then ad for massive repulsion\nChange color between z and x\n\nTransition 1-2:\nQuickly press q, 2, then 1 many times until settles at 2\n\nPhase 2:\nDancer moves around, dahses on beat\nAlternate a and s to beat\nAlternate d and f to shut down fractal\nPress q or w (same effect in this case) for small pulse\nSimultanously click sf then ad for bounce then fade\nChange colors c,v, and so on\nInvert colors with space\nInvert colors very quickly to gray out colors\n\nTransition 2-3:\nAlternate d and f continously and then hit d and 3\n\nPhase 3:\nWind with arrow keys are effective here\nDancing ghosts with q/w\nPause disturbances with f and d\nChange gravity with a and s\nColor changing", 275, 75);
@@ -519,6 +524,7 @@ void ofApp::keyPressed(int key){
      Active Keys:
      
      Phases:
+     `: Start music
      1: Phase 1
      2: Phase 2
      3: Phase 3
@@ -705,7 +711,7 @@ void ofApp::keyPressed(int key){
             windY += 0.2f;
             break;
             
-        case 'm':
+        case '`':
             music.play();
             break;
             

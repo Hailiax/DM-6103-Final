@@ -7,9 +7,6 @@
 		<ClCompile Include="src\main.cpp">
 			<Filter>src</Filter>
 		</ClCompile>
-		<ClCompile Include="src\ofSecond.cpp">
-			<Filter>src</Filter>
-		</ClCompile>
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_sse2.cpp">
 			<Filter>src\FastNoiseSIMD</Filter>
 		</ClCompile>
@@ -31,11 +28,26 @@
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD.cpp">
 			<Filter>src\FastNoiseSIMD</Filter>
 		</ClCompile>
+		<ClCompile Include="src\ofDisplay.cpp">
+			<Filter>src</Filter>
+		</ClCompile>
 		<ClCompile Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIOData.cpp">
 			<Filter>addons\ofxSocketIO\src</Filter>
 		</ClCompile>
 		<ClCompile Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIO.cpp">
 			<Filter>addons\ofxSocketIO\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSyphon\src\ofxSyphonServer.mm">
+			<Filter>addons\ofxSyphon\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSyphon\src\ofxSyphonClient.mm">
+			<Filter>addons\ofxSyphon\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSyphon\src\ofxSyphonServerDirectory.mm">
+			<Filter>addons\ofxSyphon\src</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\..\addons\ofxSyphon\libs\Syphon\src\SyphonNameboundClient.m">
+			<Filter>addons\ofxSyphon\libs\Syphon\src</Filter>
 		</ClCompile>
 	</ItemGroup>
 	<ItemGroup>
@@ -63,9 +75,27 @@
 		<Filter Include="addons\ofxSocketIO\libs\socket.io-client\include">
 			<UniqueIdentifier>{C35A7690-F8FB-803F-C6F3-C786}</UniqueIdentifier>
 		</Filter>
+		<Filter Include="addons\ofxSyphon">
+			<UniqueIdentifier>{702862E9-2C7F-D5E7-AC3D-4A04}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSyphon\src">
+			<UniqueIdentifier>{8737A6AD-A31E-0FAD-2327-9136}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSyphon\libs">
+			<UniqueIdentifier>{31622136-B02D-FF2E-3DFD-430D}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSyphon\libs\Syphon">
+			<UniqueIdentifier>{1E89AEE5-AE15-7664-C53A-EBED}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxSyphon\libs\Syphon\src">
+			<UniqueIdentifier>{44224CCE-2F78-7C11-2F9C-26A6}</UniqueIdentifier>
+		</Filter>
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h">
+			<Filter>src</Filter>
+		</ClInclude>
+		<ClInclude Include="src\ofDisplay.h">
 			<Filter>src</Filter>
 		</ClInclude>
 		<ClInclude Include="src\FastNoiseSIMD\FastNoiseSIMD.h">
@@ -73,9 +103,6 @@
 		</ClInclude>
 		<ClInclude Include="src\FastNoiseSIMD\FastNoiseSIMD_internal.h">
 			<Filter>src\FastNoiseSIMD</Filter>
-		</ClInclude>
-		<ClInclude Include="src\ofSecond.h">
-			<Filter>src</Filter>
 		</ClInclude>
 		<ClInclude Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIOData.h">
 			<Filter>addons\ofxSocketIO\src</Filter>
@@ -91,6 +118,21 @@
 		</ClInclude>
 		<ClInclude Include="..\..\..\addons\ofxSocketIO\libs\socket.io-client\include\sio_client.h">
 			<Filter>addons\ofxSocketIO\libs\socket.io-client\include</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSyphon\src\ofxSyphon.h">
+			<Filter>addons\ofxSyphon\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSyphon\src\ofxSyphonServer.h">
+			<Filter>addons\ofxSyphon\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSyphon\src\ofxSyphonClient.h">
+			<Filter>addons\ofxSyphon\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSyphon\src\ofxSyphonServerDirectory.h">
+			<Filter>addons\ofxSyphon\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxSyphon\libs\Syphon\src\SyphonNameboundClient.h">
+			<Filter>addons\ofxSyphon\libs\Syphon\src</Filter>
 		</ClInclude>
 	</ItemGroup>
 	<ItemGroup>

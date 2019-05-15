@@ -206,6 +206,7 @@ public:
     std::string address;
     std::string status;
     
+    // Music
     ofSoundPlayer music;
     
     static constexpr size_t nBandsToGet = 128;

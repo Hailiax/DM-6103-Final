@@ -100,7 +100,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src;..\..\..\addons\ofxSyphon\libs;..\..\..\addons\ofxSyphon\libs\Syphon;..\..\..\addons\ofxSyphon\libs\Syphon\lib;..\..\..\addons\ofxSyphon\libs\Syphon\src;..\..\..\addons\ofxSyphon\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
 		</ClCompile>
@@ -120,7 +120,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src;..\..\..\addons\ofxSyphon\libs;..\..\..\addons\ofxSyphon\libs\Syphon;..\..\..\addons\ofxSyphon\libs\Syphon\lib;..\..\..\addons\ofxSyphon\libs\Syphon\src;..\..\..\addons\ofxSyphon\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
@@ -140,7 +140,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src;..\..\..\addons\ofxSyphon\libs;..\..\..\addons\ofxSyphon\libs\Syphon;..\..\..\addons\ofxSyphon\libs\Syphon\lib;..\..\..\addons\ofxSyphon\libs\Syphon\src;..\..\..\addons\ofxSyphon\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<MultiProcessorCompilation>true</MultiProcessorCompilation>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
@@ -163,7 +163,7 @@
 			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
 			<WarningLevel>Level3</WarningLevel>
-			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src</AdditionalIncludeDirectories>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;src\FastNoiseSIMD;..\..\..\addons\ofxSocketIO\libs;..\..\..\addons\ofxSocketIO\libs\socket.io-client;..\..\..\addons\ofxSocketIO\libs\socket.io-client\include;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib;..\..\..\addons\ofxSocketIO\libs\socket.io-client\lib\linuxarmv6l;..\..\..\addons\ofxSocketIO\src;..\..\..\addons\ofxSyphon\libs;..\..\..\addons\ofxSyphon\libs\Syphon;..\..\..\addons\ofxSyphon\libs\Syphon\lib;..\..\..\addons\ofxSyphon\libs\Syphon\src;..\..\..\addons\ofxSyphon\src</AdditionalIncludeDirectories>
 			<CompileAs>CompileAsCpp</CompileAs>
 			<ObjectFileName>$(IntDir)</ObjectFileName>
 		</ClCompile>
@@ -182,7 +182,6 @@
 	<ItemGroup>
 		<ClCompile Include="src\main.cpp" />
 		<ClCompile Include="src\ofApp.cpp" />
-		<ClCompile Include="src\ofSecond.cpp" />
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_sse2.cpp" />
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_sse41.cpp" />
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_avx512.cpp" />
@@ -190,19 +189,29 @@
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_avx2.cpp" />
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD_neon.cpp" />
 		<ClCompile Include="src\FastNoiseSIMD\FastNoiseSIMD.cpp" />
+		<ClCompile Include="src\ofDisplay.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIOData.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIO.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxSyphon\src\ofxSyphonServer.mm" />
+		<ClCompile Include="..\..\..\addons\ofxSyphon\src\ofxSyphonClient.mm" />
+		<ClCompile Include="..\..\..\addons\ofxSyphon\src\ofxSyphonServerDirectory.mm" />
+		<ClCompile Include="..\..\..\addons\ofxSyphon\libs\Syphon\src\SyphonNameboundClient.m" />
 	</ItemGroup>
 	<ItemGroup>
 		<ClInclude Include="src\ofApp.h" />
+		<ClInclude Include="src\ofDisplay.h" />
 		<ClInclude Include="src\FastNoiseSIMD\FastNoiseSIMD.h" />
 		<ClInclude Include="src\FastNoiseSIMD\FastNoiseSIMD_internal.h" />
-		<ClInclude Include="src\ofSecond.h" />
 		<ClInclude Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIOData.h" />
 		<ClInclude Include="..\..\..\addons\ofxSocketIO\src\ofxSocketIO.h" />
 		<ClInclude Include="..\..\..\addons\ofxSocketIO\libs\socket.io-client\include\sio_socket.h" />
 		<ClInclude Include="..\..\..\addons\ofxSocketIO\libs\socket.io-client\include\sio_message.h" />
 		<ClInclude Include="..\..\..\addons\ofxSocketIO\libs\socket.io-client\include\sio_client.h" />
+		<ClInclude Include="..\..\..\addons\ofxSyphon\src\ofxSyphon.h" />
+		<ClInclude Include="..\..\..\addons\ofxSyphon\src\ofxSyphonServer.h" />
+		<ClInclude Include="..\..\..\addons\ofxSyphon\src\ofxSyphonClient.h" />
+		<ClInclude Include="..\..\..\addons\ofxSyphon\src\ofxSyphonServerDirectory.h" />
+		<ClInclude Include="..\..\..\addons\ofxSyphon\libs\Syphon\src\SyphonNameboundClient.h" />
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

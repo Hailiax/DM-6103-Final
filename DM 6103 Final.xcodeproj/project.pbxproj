@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08364DFD3A7CBC6885885276 /* ofxSocketIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A96C398AD37CAFA23F824F3 /* ofxSocketIO.cpp */; };
-		0D6D71394D427E63C15532FC /* FastNoiseSIMD_sse2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BB62823F91CF6A98D388A1A /* FastNoiseSIMD_sse2.cpp */; settings = {COMPILER_FLAGS = "-msse2"; }; };
+		0D6D71394D427E63C15532FC /* FastNoiseSIMD_sse2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BB62823F91CF6A98D388A1A /* FastNoiseSIMD_sse2.cpp */; settings = {COMPILER_FLAGS = "-msse2 "; }; };
 		11DF9AB1B4EAA63E3B190CA0 /* ofxSyphonServerDirectory.mm in Sources */ = {isa = PBXBuildFile; fileRef = E723BEF4C55D236E24639608 /* ofxSyphonServerDirectory.mm */; };
 		1F558B76FB3412843DDAA031 /* ofxSyphonClient.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03EA4DA95B5E1B8409FC058E /* ofxSyphonClient.mm */; };
 		4A246A4282B5A84D0955A652 /* FastNoiseSIMD_avx512.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1B172EFFB69AA5841D7BF5BF /* FastNoiseSIMD_avx512.cpp */; settings = {COMPILER_FLAGS = "-mavx512f"; }; };
@@ -706,11 +706,11 @@
 			isa = PBXGroup;
 			children = (
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
-				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
+				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				8F584BA96175A06122A85559 /* ofDisplay.h */,
-				BC8FE0A31C1D39310D728BD9 /* FastNoiseSIMD */,
 				7BFA5C36D5003BE2C270A404 /* ofDisplay.cpp */,
+				BC8FE0A31C1D39310D728BD9 /* FastNoiseSIMD */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1042,7 +1042,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E4EB6923138AFD0F00A09F29 /* Project.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -48,6 +48,7 @@ int main(){
     bool useServerPosition = false; // Use XY data from IP address. (Needs to be generalized outside of Jiwon's Kinect)
     //home ip: 192.168.1.20
     //school ip: 10.18.248.66
+    //flea ip: 50.74.52.90
     std::string IPAddress = "http://192.168.1.20:3000";
     
     
