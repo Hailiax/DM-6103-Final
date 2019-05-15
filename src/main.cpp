@@ -109,6 +109,7 @@ int main(){
     
     if (windows == 0){
         mainApp->windowWidth = mainApp->windowHeight = mainApp->FBOwidth = mainApp->FBOheight = 0; // Detect dimensions in app
+        mainApp->notUsingGUI = true;
     } else{
         mainApp->windowWidth = lastDisplayWindow->getWidth();
         mainApp->windowHeight = lastDisplayWindow->getHeight();

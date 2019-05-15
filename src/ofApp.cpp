@@ -19,7 +19,7 @@ void ofApp::setup(){
     beat = beat*M_PI/360; // Convert beat for input to sin()
     velocityScale = velocityScaleConst;
     opposingVelocity = opposingVelocityConst/60.0;
-    if (FBOheight == windowHeight){
+    if (notUsingGUI){
         windowWidth = FBOwidth = ofGetWindowWidth();
         windowHeight = FBOheight = ofGetWindowHeight();
     }
@@ -133,6 +133,48 @@ void ofApp::setup(){
     
     // Preapre border frame mesh
     frameMesh.setUsage(GL_DYNAMIC_DRAW);
+    frameMesh.setMode(OF_PRIMITIVE_TRIANGLES);
+    
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    frameMesh.addColor(ofColor::white);
+    
+    frameMesh.addIndex(0);
+    frameMesh.addIndex(1);
+    frameMesh.addIndex(4);
+    
+    frameMesh.addIndex(4);
+    frameMesh.addIndex(1);
+    frameMesh.addIndex(5);
+    
+    frameMesh.addIndex(1);
+    frameMesh.addIndex(2);
+    frameMesh.addIndex(5);
+    
+    frameMesh.addIndex(5);
+    frameMesh.addIndex(2);
+    frameMesh.addIndex(6);
+    
+    frameMesh.addIndex(2);
+    frameMesh.addIndex(3);
+    frameMesh.addIndex(6);
+    
+    frameMesh.addIndex(6);
+    frameMesh.addIndex(3);
+    frameMesh.addIndex(7);
+    
+    frameMesh.addIndex(3);
+    frameMesh.addIndex(0);
+    frameMesh.addIndex(7);
+    
+    frameMesh.addIndex(7);
+    frameMesh.addIndex(0);
+    frameMesh.addIndex(4);
     
     // Load font
     font.load("NotoMono-Regular.ttf", 10);
@@ -378,8 +420,7 @@ void ofApp::update(){
     // Update border frame
     ///////
     
-    frameMesh.clear();
-    frameMesh.setMode(OF_PRIMITIVE_TRIANGLES);
+    frameMesh.clearVertices();
     
     frameMesh.addVertex(ofVec3f(0, 0, 0));
     frameMesh.addVertex(ofVec3f(windowWidth, 0, 0));
@@ -390,56 +431,16 @@ void ofApp::update(){
     frameMesh.addVertex(ofVec3f(windowWidth-frameWidthScaled, frameWidthScaled, 0));
     frameMesh.addVertex(ofVec3f(windowWidth-frameWidthScaled, windowHeight-frameWidthScaled, 0));
     frameMesh.addVertex(ofVec3f(frameWidthScaled, windowHeight-frameWidthScaled, 0));
-    
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    frameMesh.addColor(ofColor::white);
-    
-    frameMesh.addIndex(0);
-    frameMesh.addIndex(1);
-    frameMesh.addIndex(4);
-    
-    frameMesh.addIndex(4);
-    frameMesh.addIndex(1);
-    frameMesh.addIndex(5);
-    
-    frameMesh.addIndex(1);
-    frameMesh.addIndex(2);
-    frameMesh.addIndex(5);
-    
-    frameMesh.addIndex(5);
-    frameMesh.addIndex(2);
-    frameMesh.addIndex(6);
-    
-    frameMesh.addIndex(2);
-    frameMesh.addIndex(3);
-    frameMesh.addIndex(6);
-    
-    frameMesh.addIndex(6);
-    frameMesh.addIndex(3);
-    frameMesh.addIndex(7);
-    
-    frameMesh.addIndex(3);
-    frameMesh.addIndex(0);
-    frameMesh.addIndex(7);
-    
-    frameMesh.addIndex(7);
-    frameMesh.addIndex(0);
-    frameMesh.addIndex(4);
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofBackground(0);
     
-    if (FBOheight == windowHeight){ // No multiscreen -> draw on this window and no GUI
+    if (notUsingGUI){ // No multiscreen -> draw on this window and no GUI
         
         effectsPingPong.src->draw(0,0);
+        glPointSize(10.f);
         frameMesh.draw();
         
     } else{ // Draw GUI, leave drawing to ofDisplays

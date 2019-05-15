@@ -139,6 +139,7 @@ public:
     bool useServerPosition;
     bool attractToggle;
     bool phase1Fractal;
+    bool notUsingGUI = false;
     
     float velocityScaleConst;
     float opposingVelocityConst;

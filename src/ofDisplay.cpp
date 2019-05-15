@@ -23,5 +23,6 @@ void ofDisplay::draw(){
     );
     
     // Draw frame
+    glPointSize(10.f);
     main->frameMesh.draw();
 }
