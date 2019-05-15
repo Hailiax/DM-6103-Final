@@ -31,8 +31,8 @@ int main(){
     // Build settings (more graphics related settings can be found at the top of ofApp.cpp)
     bool fullscreen = false;
     int windows = 2; // Number of auxillary drawing windows. If this is set to 0, a GUI will not be drawn and graphics will be drawn on one window.
-    int width = 800; // Height/width for non fullscreen. If fullscreen, determines GUI height/width
-    int height = 450;
+    int width = 1920; // Height/width for non fullscreen. If fullscreen, determines GUI height/width
+    int height = 1080;
     
     float beat = 5.0; // How many "bangs" per minute. Bpm divided by measures/min divided by beats/measure?
     int particleCount = 300000; // Turn up as much as possible. Harder on the GPU
@@ -48,8 +48,8 @@ int main(){
     bool useServerPosition = false; // Use XY data from IP address. (Needs to be generalized outside of Jiwon's Kinect)
     //home ip: 192.168.1.20
     //school ip: 10.18.248.66
-    //flea ip: 50.74.52.90
-    std::string IPAddress = "http://192.168.1.20:3000";
+    //flea ip: 192.168.0.106
+    std::string IPAddress = "http://172.20.10.11:3000";
     
     
     // Create window settings

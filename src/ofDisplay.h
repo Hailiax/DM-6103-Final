@@ -14,7 +14,7 @@ public:
     // Which display am I?
     int display;
     
-    ofxSyphonServer displayOneServer;
+//    ofxSyphonServer displayOneServer;
     
-    ofxSyphonClient mClient;
+//    ofxSyphonClient mClient;
 };

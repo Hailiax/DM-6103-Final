@@ -505,11 +505,17 @@ void ofApp::draw(){
         // Log wind
         font.drawString( "Wind (x, y): (" + std::to_string(windX) + ", " + std::to_string(-windY) + ")", 10, 30 );
         
+        // Log playback position
+        font.drawString( "Playback position: " + std::to_string(music.getPosition()), 10, 45 );
+        
+        // Using mouse
+        font.drawString( "Using kinect: " + std::to_string(useServerPosition), 10, 60 );
+        
         // List active keys
-        font.drawString( "Active Keys:\n\nPhases:\n`: Start music\n1: Phase 1\n2: Phase 2\n3: Phase 3\n\nEvents:\nq: Clean explode\nw: Fractal explode\n\nModifiers:\na: Normal attraction\ns: Anti attraction\nd: Normal attraction\nf: Paused attraction\n\nColors:\nz:\nx:\nc:\nv:\nb:\n\nspace: Invert colors\narrow keys: Increment wind\nescape: Quit", 10, 75);
+        font.drawString( "Active Keys:\n\nPhases:\n`: Start music\n1: Phase 1\n2: Phase 2\n3: Phase 3\n\nEvents:\nq: Clean explode\nw: Fractal explode\n\nModifiers:\na: Normal attraction\ns: Anti attraction\nd: Normal attraction\nf: Paused attraction\n\nColors:\nz:\nx:\nc:\nv:\nb:\n\nspace: Invert colors\narrow keys: Increment wind\nescape: Quit", 10, 105);
         
         // List possible effects
-        font.drawString( "Possible Effects:\n\nPhase 1:\n!! Winds w/ arrow keys can influence all these effects. Dont forget diagonal winds\nDancer flings particles\nWhile still, press q for explosion\nWhile still, press w for fractal explosion\nWhile moving, press q\nWhile moving, press w\nHold q for continous ring\nHold w for continous blob\nAlternate q and w. Mixin q and w for alternating explosion\nWhile still, alternate clicking a and s for mixing gravity\nWhile moving, alternate clicking a and s\nMulti press q while wind\nPress f, then d at any time/after any other effect. Dancer can move or not move. This shuts down new attraction\nPress q/w, then f then d quickly for radiating explosion or delayed return. Better when dancer still\nSimultanously click sf then ad for massive repulsion\nChange color between z and x\n\nTransition 1-2:\nQuickly press q, 2, then 1 many times until settles at 2\n\nPhase 2:\nDancer moves around, dahses on beat\nAlternate a and s to beat\nAlternate d and f to shut down fractal\nPress q or w (same effect in this case) for small pulse\nSimultanously click sf then ad for bounce then fade\nChange colors c,v, and so on\nInvert colors with space\nInvert colors very quickly to gray out colors\n\nTransition 2-3:\nAlternate d and f continously and then hit d and 3\n\nPhase 3:\nWind with arrow keys are effective here\nDancing ghosts with q/w\nPause disturbances with f and d\nChange gravity with a and s\nColor changing", 275, 75);
+        font.drawString( "Possible Effects:\n\nPhase 1:\n!! Winds w/ arrow keys can influence all these effects. Dont forget diagonal winds\nDancer flings particles\nWhile still, press q for explosion\nWhile still, press w for fractal explosion\nWhile moving, press q\nWhile moving, press w\nHold q for continous ring\nHold w for continous blob\nAlternate q and w. Mixin q and w for alternating explosion\nWhile still, alternate clicking a and s for mixing gravity\nWhile moving, alternate clicking a and s\nMulti press q while wind\nPress f, then d at any time/after any other effect. Dancer can move or not move. This shuts down new attraction\nPress q/w, then f then d quickly for radiating explosion or delayed return. Better when dancer still\nSimultanously click sf then ad for massive repulsion\nChange color between z and x\n\nTransition 1-2:\nQuickly press q, 2, then 1 many times until settles at 2\n\nPhase 2:\nDancer moves around, dahses on beat\nAlternate a and s to beat\nAlternate d and f to shut down fractal\nPress q or w (same effect in this case) for small pulse\nSimultanously click sf then ad for bounce then fade\nChange colors c,v, and so on\nInvert colors with space\nInvert colors very quickly to gray out colors\n\nTransition 2-3:\nAlternate d and f continously and then hit d and 3\n\nPhase 3:\nWind with arrow keys are effective here\nDancing ghosts with q/w\nPause disturbances with f and d\nChange gravity with a and s\nColor changing", 275, 105);
         
 
         
@@ -715,6 +721,10 @@ void ofApp::keyPressed(int key){
             music.play();
             break;
             
+        case '\\':
+            useServerPosition = !useServerPosition;
+            break;
+            
         case 27: // Quit
             OF_EXIT_APP(0);
             break;
@@ -791,7 +801,13 @@ void ofApp::gotEvent(string& name) {
 
 //--------------------------------------------------------------
 void ofApp::onServerEvent (ofxSocketIOData& data) {
-    posX = data.getFloatValue("x") * windowWidth;
-    posY = data.getFloatValue("y") * windowHeight + FBOheight - windowHeight;
-    posZ = data.getFloatValue("z");
+    float x = data.getFloatValue("x") * windowWidth;
+    float y = data.getFloatValue("y") * windowWidth;
+    float z = data.getFloatValue("z") * windowWidth;
+    
+    
+    posX = x;
+//    posY = y + FBOheight - windowHeight;
+    posY = y;
+    posZ = z;
 }

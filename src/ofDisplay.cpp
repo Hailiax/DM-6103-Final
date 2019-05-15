@@ -3,10 +3,10 @@
 //--------------------------------------------------------------
 
 void ofDisplay::setup(){
-    displayOneServer.setName("display " + ofToString(display));
+//    displayOneServer.setName("display " + ofToString(display));
     
-    mClient.setup();
-    mClient.set("", "Simple Server");
+//    mClient.setup();
+//    mClient.set("", "Simple Server");
 }
 
 //--------------------------------------------------------------
@@ -28,7 +28,7 @@ void ofDisplay::draw(){
     // Draw frame
     glPointSize(10.f);
     
-    mClient.draw(50, 50);
-    displayOneServer.publishScreen();
+//    mClient.draw(50, 50);
+//    displayOneServer.publishScreen();
 //    main->frameMesh.draw();
 }
