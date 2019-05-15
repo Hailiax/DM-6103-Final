@@ -5,6 +5,7 @@
 #include "ofEvents.h"
 #include "ofxSocketIO.h"
 #include "ofxSocketIOData.h"
+#include "ofxSyphon.h"
 
 // Run fractal generation on separate thread
 class fractalGenerationThread : public ofThread{
@@ -119,7 +120,7 @@ public:
     // Basic variables
     int FBOwidth, FBOheight;
     int windowWidth, windowHeight;
-    int posX, posY;
+    int posX, posY, posZ;
     int numParticles;
     int textureRes;
     int fractalRes;
@@ -204,4 +205,14 @@ public:
     
     std::string address;
     std::string status;
+    
+    ofSoundPlayer music;
+    
+    static constexpr size_t nBandsToGet = 128;
+    std::array<float, nBandsToGet> fftSmoothed{{0}};
+    
+    float low;
+    float mid;
+    float high;
+    float amp;
 };

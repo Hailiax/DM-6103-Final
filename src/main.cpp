@@ -46,7 +46,9 @@ int main(){
     }
     
     bool useServerPosition = false; // Use XY data from IP address. (Needs to be generalized outside of Jiwon's Kinect)
-    std::string IPAddress = "http://10.18.248.66:3000";
+    //home ip: 192.168.1.20
+    //school ip: 10.18.248.66
+    std::string IPAddress = "http://192.168.1.20:3000";
     
     
     // Create window settings
@@ -132,7 +134,7 @@ int main(){
     
     ofRunApp(mainWindow, mainApp);
     
-    ofSetWindowTitle("DM 6013 Final");
+    ofSetWindowTitle("LOST");
     ofSetEscapeQuitsApp(false);
     
     ofRunMainLoop();

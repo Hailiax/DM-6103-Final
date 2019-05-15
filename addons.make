@@ -1,1 +1,2 @@
 ofxSocketIO
+ofxSyphon
