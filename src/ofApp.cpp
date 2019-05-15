@@ -178,10 +178,53 @@ void ofApp::setup(){
     
     // Load font
     font.load("NotoMono-Regular.ttf", 10);
+    
+    music.load("lost-in-space-and-time.mp3");
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    
+    ofSoundUpdate();
+    
+    float * val = ofSoundGetSpectrum(nBandsToGet);
+    for (int i = 0;i < nBandsToGet; i++){
+        // let the smoothed value sink to zero:
+        fftSmoothed[i] *= 0.96f;
+        // take the max, either the smoothed or the incoming:
+        if (fftSmoothed[i] < val[i]) fftSmoothed[i] = val[i];
+        
+        amp += fftSmoothed[i];
+    }
+    
+    amp /= nBandsToGet;
+    
+    if(phase == 1){
+        if(amp > 0.028){
+            effectQuickExplode = ofGetFrameNum();
+        }
+    }
+    
+    if(phase == 2){
+        if(amp > 0.028){
+            phase1Fractal = true;
+            velocityScale = -velocityScaleConst;
+        }else{
+            phase1Fractal = false;
+            velocityScale = velocityScaleConst;
+        }
+    }
+    
+    //4:01
+    if(music.getPosition() > 0.401){
+        //cout << posZ << endl;
+        phase = 2;
+    }
+    //6:33
+    if(music.getPosition() > 0.690){
+        phase = 3;
+    }
+    
     // Use mouse coordinates
     if (!useServerPosition){
         posX = mouseX;
@@ -431,6 +474,8 @@ void ofApp::update(){
     frameMesh.addVertex(ofVec3f(windowWidth-frameWidthScaled, frameWidthScaled, 0));
     frameMesh.addVertex(ofVec3f(windowWidth-frameWidthScaled, windowHeight-frameWidthScaled, 0));
     frameMesh.addVertex(ofVec3f(frameWidthScaled, windowHeight-frameWidthScaled, 0));
+
+
 }
 
 //--------------------------------------------------------------
@@ -445,6 +490,10 @@ void ofApp::draw(){
         
     } else{ // Draw GUI, leave drawing to ofDisplays
         
+        //cout << amp << endl;
+        
+
+        
         // log status of sockets
         font.drawString( "Websockets status: " + status, 10, 15 );
         
@@ -456,6 +505,9 @@ void ofApp::draw(){
         
         // List possible effects
         font.drawString( "Possible Effects:\n\nPhase 1:\n!! Winds w/ arrow keys can influence all these effects. Dont forget diagonal winds\nDancer flings particles\nWhile still, press q for explosion\nWhile still, press w for fractal explosion\nWhile moving, press q\nWhile moving, press w\nHold q for continous ring\nHold w for continous blob\nAlternate q and w. Mixin q and w for alternating explosion\nWhile still, alternate clicking a and s for mixing gravity\nWhile moving, alternate clicking a and s\nMulti press q while wind\nPress f, then d at any time/after any other effect. Dancer can move or not move. This shuts down new attraction\nPress q/w, then f then d quickly for radiating explosion or delayed return. Better when dancer still\nSimultanously click sf then ad for massive repulsion\nChange color between z and x\n\nTransition 1-2:\nQuickly press q, 2, then 1 many times until settles at 2\n\nPhase 2:\nDancer moves around, dahses on beat\nAlternate a and s to beat\nAlternate d and f to shut down fractal\nPress q or w (same effect in this case) for small pulse\nSimultanously click sf then ad for bounce then fade\nChange colors c,v, and so on\nInvert colors with space\nInvert colors very quickly to gray out colors\n\nTransition 2-3:\nAlternate d and f continously and then hit d and 3\n\nPhase 3:\nWind with arrow keys are effective here\nDancing ghosts with q/w\nPause disturbances with f and d\nChange gravity with a and s\nColor changing", 275, 75);
+        
+
+        
         
     }
 }
@@ -607,7 +659,7 @@ void ofApp::keyPressed(int key){
             nextColor[3] = ofFloatColor::fromHex(0xB7A300);
             nextColor[4] = ofFloatColor::fromHex(0x905C00);
             break;
-        case 'v':
+        case 'b':
             colorChange = ofGetFrameNum();
             nextThresh[0] = 0.15;
             nextThresh[1] = 0.08;
@@ -619,7 +671,7 @@ void ofApp::keyPressed(int key){
             nextColor[3] = ofFloatColor::fromHex(0x1E2C66);
             nextColor[4] = ofFloatColor::fromHex(0x13213F);
             break;
-        case 'b':
+        case 'v':
             colorChange = ofGetFrameNum();
             nextThresh[0] = 0.15;
             nextThresh[1] = 0.08;
@@ -651,6 +703,10 @@ void ofApp::keyPressed(int key){
             break;
         case 57359:
             windY += 0.2f;
+            break;
+            
+        case 'm':
+            music.play();
             break;
             
         case 27: // Quit
@@ -712,6 +768,7 @@ void ofApp::dragEvent(ofDragInfo dragInfo){
 // Socket stuff
 void ofApp::onConnection () {
     isConnected = true;
+    useServerPosition = true;
     bindEvents();
 }
 
@@ -728,6 +785,7 @@ void ofApp::gotEvent(string& name) {
 
 //--------------------------------------------------------------
 void ofApp::onServerEvent (ofxSocketIOData& data) {
-    posX = data.getFloatValue("x")*windowWidth;
-    posY = data.getFloatValue("y")*windowHeight + FBOheight - windowHeight;
+    posX = data.getFloatValue("x") * windowWidth;
+    posY = data.getFloatValue("y") * windowHeight + FBOheight - windowHeight;
+    posZ = data.getFloatValue("z");
 }
