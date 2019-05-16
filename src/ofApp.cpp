@@ -803,11 +803,9 @@ void ofApp::gotEvent(string& name) {
 void ofApp::onServerEvent (ofxSocketIOData& data) {
     float x = data.getFloatValue("x") * windowWidth;
     float y = data.getFloatValue("y") * windowWidth;
-    float z = data.getFloatValue("z") * windowWidth;
     
     
-    posX = x;
+    posX = windowWidth - x;
 //    posY = y + FBOheight - windowHeight;
     posY = y;
-    posZ = z;
 }

@@ -65,9 +65,10 @@ int main(){
     // Settings
     if (windows == 0) settings.setSize(width, height);
     else settings.setSize(width, height*windows);
-    settings.setPosition(ofVec2f(0,0));
+    if (!fullscreen) settings.setPosition(ofVec2f(0,0));
     settings.monitor = 0;
     
+    settings.setSize(400, 600); // White left black right. Delete this
     // Create pointers to window and app for reference later and to change in-app settings
     shared_ptr<ofAppBaseWindow> mainWindow = ofCreateWindow(settings);
     shared_ptr<ofApp> mainApp(new ofApp);
@@ -137,6 +138,7 @@ int main(){
     
     ofSetWindowTitle("LOST");
     ofSetEscapeQuitsApp(false);
+    ofSetVerticalSync(true);
     
     ofRunMainLoop();
     

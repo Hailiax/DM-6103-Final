@@ -120,7 +120,7 @@ public:
     // Basic variables
     int FBOwidth, FBOheight;
     int windowWidth, windowHeight;
-    int posX, posY, posZ;
+    int posX, posY;
     int numParticles;
     int textureRes;
     int fractalRes;
