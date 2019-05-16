@@ -29,7 +29,7 @@
 int main(){
     
     // Build settings (more graphics related settings can be found at the top of ofApp.cpp)
-    bool fullscreen = false;
+    bool fullscreen = true;
     int windows = 2; // Number of auxillary drawing windows. If this is set to 0, a GUI will not be drawn and graphics will be drawn on one window.
     int width = 1920; // Height/width for non fullscreen. If fullscreen, determines GUI height/width
     int height = 1080;
@@ -45,11 +45,11 @@ int main(){
         opposingVelocity = -24.0f;
     }
     
-    bool useServerPosition = false; // Use XY data from IP address. (Needs to be generalized outside of Jiwon's Kinect)
+    bool useServerPosition = true; // Use XY data from IP address. (Needs to be generalized outside of Jiwon's Kinect)
     //home ip: 192.168.1.20
     //school ip: 10.18.248.66
     //flea ip: 192.168.0.106
-    std::string IPAddress = "http://172.20.10.11:3000";
+    std::string IPAddress = "http://lost-server.herokuapp.com";
     
     
     // Create window settings
